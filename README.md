@@ -1,18 +1,6 @@
 [TOC]
 
-### Java
-
-### C/C++
-
-### Kotlin
-
-### Rust
-
-### Go
-
-### Python
-
-### JavaScript
+### 暂且先扔了，别的事太多了。
 
 
 
