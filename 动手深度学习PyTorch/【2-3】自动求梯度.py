@@ -1,5 +1,5 @@
 import torch
-
+# ?TODO 但是每个Variable都有三个属性，Varibale的Tensor本身的.data，对应Tensor的梯度.grad，以及这个Variable是通过什么方式得到的.grad_fn。
 x = torch.zeros(2, 2, requires_grad=True)
 print(x)
 print(x.grad_fn)

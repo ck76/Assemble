@@ -1,6 +1,6 @@
 import numpy as np
 
-# 最邻近分类器（k==1时）
+# 最邻近分类器（用例子学习 PyTorch==1时）
 # 可能出现一圈绿色包裹着一颗黄色的情况，由此出现了k-邻近算法，通过不断改变k的值，
 # https://blog.csdn.net/nineship/article/details/88245028
 #  1）算距离：给定测试对象，计算它与训练集中的每个对象的距离

@@ -107,7 +107,7 @@ out.backward(torch.randn(1, 10))
 # 如果是一个单独的样本，只需要使用input.unsqueeze(0)来添加一个“假的”批大小维度。
 # TODO 复习：
 # torch.Tensor - 一个多维数组，支持诸如backward()等的自动求导操作，同时也保存了张量的梯度。
-# nn.Module - 神经网络模块。是一种方便封装参数的方式，具有将参数移动到GPU、导出、加载等功能。
+# nn - 神经网络模块。是一种方便封装参数的方式，具有将参数移动到GPU、导出、加载等功能。
 # nn.Parameter - 张量的一种，当它作为一个属性分配给一个Module时，它会被自动注册为一个参数。
 # autograd.Function - 实现了自动求导前向和反向传播的定义，每个Tensor至少创建一个Function节点，该节点连接到创建Tensor的函数并对其历史进行编码。
 
@@ -156,16 +156,62 @@ loss = criterion(output, target)
 loss.backward()
 optimizer.step()  # 更新参数
 
-for t in range(500):
-    # 前向传播：通过向模型传递x计算预测值y
-    y_pred = net(x)
+# for t in range(500):
+#     # 前向传播：通过向模型传递x计算预测值y
+#     y_pred = net(x)
+#
+#     # 计算并输出loss
+#     loss = criterion(y_pred, y)
+#     if t % 100 == 99:
+#         print(t, loss.item())
+#
+#     # 清零梯度，反向传播，更新权重
+#     optimizer.zero_grad()
+#     loss.backward()
+#     optimizer.step()
 
-    # 计算并输出loss
-    loss = criterion(y_pred, y)
-    if t % 100 == 99:
-        print(t, loss.item())
+# TODO 卷积神经网络CNN的结构一般包含这几层：
+#
+# TODO    输入层：用于数据的输入
+#
+# TODO    卷积层：使用卷积核进行特征提取和特征映射
+#
+# TODO   激励层：由于卷积也是一种线性运算，因此需要增加非线性映射
+#
+# TODO  池化层：进行下采样，对特征图稀疏处理，减少特征信息的损失
+#
+# TODO  输出层：用于输出结果
+class Net(nn.Module):
 
-    # 清零梯度，反向传播，更新权重
-    optimizer.zero_grad()
-    loss.backward()
-    optimizer.step()
+    def __init__(self):
+        super(Net, self).__init__()
+        # 26.定义①的卷积层，输入为32x32的图像，卷积核大小5x5卷积核种类6
+        self.conv1 = nn.Conv2d(3, 6, 5)
+        # 27.定义③的卷积层，输入为前一层6个特征，卷积核大小5x5，卷积核种类16
+        self.conv2 = nn.Conv2d(6, 16, 5)
+        # 28.定义⑤的全链接层，输入为16*5*5，输出为120
+        self.fc1 = nn.Linear(16 * 5 * 5, 120)  # 6*6 from image dimension
+        # 29.定义⑥的全连接层，输入为120，输出为84
+        self.fc2 = nn.Linear(120, 84)
+        # 30.定义⑥的全连接层，输入为84，输出为10
+        self.fc3 = nn.Linear(84, 10)
+
+    def forward(self, x):
+        # 31.完成input-S2，先卷积+relu，再2x2下采样
+        x = F.max_pool2d(F.relu(self.conv1(x)), (2, 2))
+        # 32.完成S2-S4，先卷积+relu，再2x2下采样
+        x = F.max_pool2d(F.relu(self.conv2(x)), 2) #卷积核方形时，可以只写一个维度
+        # 33.将特征向量扁平成行向量
+        x = x.view(-1, 16 * 5 * 5)
+        # 34.使用fc1+relu
+        x = F.relu(self.fc1(x))
+        # 35.使用fc2+relu
+        x = F.relu(self.fc2(x))
+        # 36.使用fc3
+        x = self.fc3(x)
+        return x
+
+
+net = Net()
+print(net)
+print(net.state_dict())

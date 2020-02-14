@@ -15,5 +15,5 @@ plt.ylabel('y2')
 plt.subplot(2,2,3)#两行两列,这是第三个图
 plt.plot(3*t,s,'m--')
 plt.subplot(2,2,4)#两行两列,这是第四个图
-plt.plot(4*t,s,'k--')
+plt.plot(4*t,s,'用例子学习 PyTorch--')
 plt.show()

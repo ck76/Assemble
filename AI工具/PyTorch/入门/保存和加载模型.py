@@ -4,7 +4,7 @@
 
 torch.save：将序列化的对象保存到磁盘。此函数使用Python的 pickle实用程序进行序列化。使用此功能可以保存各种对象的模型，张量和字典。
 torch.load：使用pickle的解腌功能将腌制的目标文件反序列化到内存中。此功能还有助于设备将数据加载到其中（请参阅 跨设备保存和加载模型）。
-torch.nn.Module.load_state_dict：使用反序列化的state_dict加载模型的参数字典 。有关state_dict的更多信息，请参阅什么是state_dict？。
+torch.nn.load_state_dict：使用反序列化的state_dict加载模型的参数字典 。有关state_dict的更多信息，请参阅什么是state_dict？。
 """
 from __future__ import print_function, division
 import os

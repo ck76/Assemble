@@ -12,7 +12,7 @@ num_inputs = 784
 num_outputs = 10
 
 
-# class LinearNet(nn.Module):
+# class LinearNet(nn):
 #     def __init__(self, num_inputs, num_outputs):
 #         super(LinearNet, self).__init__()
 #         self.linear = nn.Linear(num_inputs, num_outputs)

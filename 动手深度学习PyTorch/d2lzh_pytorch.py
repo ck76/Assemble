@@ -174,7 +174,7 @@ def semilogy(x_vals, y_vals, x_label, y_label, x2_vals=None, y2_vals=None,
 # def evaluate_accuracy(data_iter, net):
 #     acc_sum, n = 0.0, 0
 #     for X, y in data_iter:
-#         if isinstance(net, torch.nn.Module):
+#         if isinstance(net, torch.nn):
 #             net.eval() # 评估模式, 这会关闭dropout
 #             acc_sum += (net(X).argmax(dim=1) == y).float().sum().item()
 #             net.train() # 改回训练模式

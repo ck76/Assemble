@@ -32,6 +32,8 @@ print(type(trainset))
 print(len(trainset), len(testset))
 # <class 'torchvision.datasets.mnist.FashionMNIST'>
 # 60000 10000
+print(type(trainset[0]))
+print(trainset[0])
 feature, label = trainset[0]
 print(feature.shape, feature.dtype)  # Channel x Height X Width
 print(label)
