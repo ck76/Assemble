@@ -11,6 +11,15 @@ N, D_in, H, D_out = 64, 1000, 100, 10
 x = torch.randn(N, D_in)
 y = torch.randn(N, D_out)
 """
+# N是批大小；D是输入维度
+# H是隐藏层维度；D_out是输出维度
+N, D_in, H, D_out = 64, 1000, 100, 10
+
+# 产生输入和输出随机张量
+x = torch.randn(N, D_in)
+y = torch.randn(N, D_out)
+
+
 class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()

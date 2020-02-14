@@ -1,4 +1,9 @@
 import sys
+import os
+
+curPath = os.path.abspath(os.path.dirname(__file__))
+rootPath = os.path.split(curPath)[0]
+sys.path.append(rootPath)
 
 import torch
 import torchvision
@@ -11,10 +16,10 @@ print(torch.__version__)
 print(torchvision.__version__)
 
 mnist_train = torchvision.datasets.FashionMNIST(
-    root='/Users/chengkun/workspace/Assembleeeeeeeeeee/cs231n/AI工具/PyTorch/data', train=True, download=True,
+    root='~/Datasets/', train=True, download=True,
     transform=transforms.ToTensor())
 mnist_test = torchvision.datasets.FashionMNIST(
-    root='/Users/chengkun/workspace/Assembleeeeeeeeeee/cs231n/AI工具/PyTorch/data', train=False, download=True,
+    root='~/Datasets/', train=False, download=True,
     transform=transforms.ToTensor())
 
 print(type(mnist_train))
@@ -26,9 +31,10 @@ print(feature.shape, feature.dtype)  # Channel x Height X Width
 print(label)
 # torch.Size([1, 28, 28]) torch.float32
 # tensor(9)
-mnist_PIL = torchvision.datasets.FashionMNIST(root='~/Datasets/FashionMNIST', train=True, download=True)
+mnist_PIL = torchvision.datasets.FashionMNIST(root='~/Datasets/', train=True, download=True)
 PIL_feature, label = mnist_PIL[0]
 print(PIL_feature)
+
 
 # 本函数已保存在d2lzh包中方便以后使用
 def get_fashion_mnist_labels(labels):
@@ -36,22 +42,25 @@ def get_fashion_mnist_labels(labels):
                    'sandal', 'shirt', 'sneaker', 'bag', 'ankle boot']
     return [text_labels[int(i)] for i in labels]
 
+
 # 本函数已保存在d2lzh包中方便以后使用
 def show_fashion_mnist(images, labels):
-    d2l.use_svg_display()
+    # d2l.use_svg_display()
     # 这里的_表示我们忽略（不使用）的变量
-    _, figs = plt.subplots(1, len(images), figsize=(12, 12))
+    _, figs = plt.subplots(1, len(images), figsize=(12, 6))
     for f, img, lbl in zip(figs, images, labels):
         f.imshow(img.view((28, 28)).numpy())
         f.set_title(lbl)
-        f.axes.get_xaxis().set_visible(False)
-        f.axes.get_yaxis().set_visible(False)
+        # f.axes.get_xaxis().set_visible(False)
+        # f.axes.get_yaxis().set_visible(False)
     plt.show()
+
 
 X, y = [], []
 for i in range(10):
     X.append(mnist_train[i][0])
     y.append(mnist_train[i][1])
+
 show_fashion_mnist(X, get_fashion_mnist_labels(y))
 
 batch_size = 256
