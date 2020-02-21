@@ -1,10 +1,5 @@
 # TODO 数据集所在位置
-root = '~/Datasets'
-
-
-def hello():
-    print("hello")
-
+data_location = '~/Datasets'
 
 import collections
 import math
@@ -42,7 +37,7 @@ VOC_COLORMAP = [[0, 0, 0], [128, 0, 0], [0, 128, 0], [128, 128, 0],
 
 # ###################### 3.2 ############################
 def set_figsize(figsize=(3.5, 2.5)):
-    # use_svg_display()
+    use_svg_display()
     # 设置图的尺寸
     plt.rcParams['figure.figsize'] = figsize
 
@@ -85,7 +80,7 @@ def get_fashion_mnist_labels(labels):
 
 
 def show_fashion_mnist(images, labels):
-    # use_svg_display()
+    use_svg_display()
     # 这里的_表示我们忽略（不使用）的变量
     _, figs = plt.subplots(1, len(images), figsize=(12, 12))
     for f, img, lbl in zip(figs, images, labels):
@@ -93,7 +88,7 @@ def show_fashion_mnist(images, labels):
         f.set_title(lbl)
         f.axes.get_xaxis().set_visible(False)
         f.axes.get_yaxis().set_visible(False)
-    plt.show()
+    # plt.show()
 
 
 # 5.6 修改
@@ -127,9 +122,7 @@ def train_ch3(net, train_iter, test_iter, loss, num_epochs, batch_size,
     for epoch in range(num_epochs):
         train_l_sum, train_acc_sum, n = 0.0, 0.0, 0
         for X, y in train_iter:
-            # print(X.shape,y.shape)
             y_hat = net(X)
-            # print(y_hat.shape)
             l = loss(y_hat, y).sum()
 
             # 梯度清零
@@ -145,8 +138,7 @@ def train_ch3(net, train_iter, test_iter, loss, num_epochs, batch_size,
             else:
                 optimizer.step()  # “softmax回归的简洁实现”一节将用到
 
-            # train_l_sum += l.item()
-            train_l_sum += l.item()  # 加不加item也行，将tenser转一个数
+            train_l_sum += l.item()
             train_acc_sum += (y_hat.argmax(dim=1) == y).sum().item()
             n += y.shape[0]
         test_acc = evaluate_accuracy(test_iter, net)
@@ -159,7 +151,6 @@ class FlattenLayer(torch.nn.Module):
     def __init__(self):
         super(FlattenLayer, self).__init__()
 
-    # 将数据展开，比如([256, 1, 28, 28]) 展开成 256* 784
     def forward(self, x):  # x shape: (batch, *, *, ...)
         return x.view(x.shape[0], -1)
 
@@ -182,7 +173,7 @@ def semilogy(x_vals, y_vals, x_label, y_label, x2_vals=None, y2_vals=None,
 # def evaluate_accuracy(data_iter, net):
 #     acc_sum, n = 0.0, 0
 #     for X, y in data_iter:
-#         if isinstance(net, torch.nn):
+#         if isinstance(net, torch.nn.Module):
 #             net.eval() # 评估模式, 这会关闭dropout
 #             acc_sum += (net(X).argmax(dim=1) == y).float().sum().item()
 #             net.train() # 改回训练模式
@@ -251,25 +242,14 @@ def train_ch5(net, train_iter, test_iter, batch_size, optimizer, device, num_epo
 
 
 # ########################## 5.6 #########################3
-def load_data_fashion_mnist(batch_size, resize=None, root='~/Datasets'):
-    # """Download the fashion mnist dataset and then load into memory."""
-    # trans = []
-    # if resize:
-    #     trans.append(torchvision.transforms.Resize(size=resize))
-    # trans.append(torchvision.transforms.ToTensor())
-    #
-    # transform = torchvision.transforms.Compose(trans)
-    # mnist_train = torchvision.datasets.FashionMNIST(root=root, train=True, download=True, transform=transform)
-    # mnist_test = torchvision.datasets.FashionMNIST(root=root, train=False, download=True, transform=transform)
-    # if sys.platform.startswith('win'):
-    #     num_workers = 0  # 0表示不用额外的进程来加速读取数据
-    # else:
-    #     num_workers = 4
-    # train_iter = torch.utils.data.DataLoader(mnist_train, batch_size=batch_size, shuffle=True, num_workers=num_workers)
-    # test_iter = torch.utils.data.DataLoader(mnist_test, batch_size=batch_size, shuffle=False, num_workers=num_workers)
-
+def load_data_fashion_mnist(batch_size, resize=None, root=data_location):
     """Download the fashion mnist dataset and then load into memory."""
-    transform = transforms.ToTensor()
+    trans = []
+    if resize:
+        trans.append(torchvision.transforms.Resize(size=resize))
+    trans.append(torchvision.transforms.ToTensor())
+
+    transform = torchvision.transforms.Compose(trans)
     mnist_train = torchvision.datasets.FashionMNIST(root=root, train=True, download=True, transform=transform)
     mnist_test = torchvision.datasets.FashionMNIST(root=root, train=False, download=True, transform=transform)
     if sys.platform.startswith('win'):

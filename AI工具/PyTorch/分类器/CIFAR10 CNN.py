@@ -106,7 +106,7 @@ for epoch in range(2):  # loop over the dataset multiple times
         inputs, labels = data
 
         # wrap them in Variable
-        inputs, labels = Variable(inputs), Variable(labels)
+        # inputs, labels = Variable(inputs), Variable(labels)
 
         # zero the parameter gradients
         optimizer.zero_grad()
@@ -128,6 +128,9 @@ for epoch in range(2):  # loop over the dataset multiple times
 
 print('Finished Training')
 
+
+
+
 dataiter = iter(testloader)
 images, labels = dataiter.next()
 
@@ -135,19 +138,23 @@ images, labels = dataiter.next()
 imshow(torchvision.utils.make_grid(images))
 print('GroundTruth: ', ' '.join('%5s' % classes[labels[j]] for j in range(4)))
 
-outputs = net(Variable(images))
-
+# outputs = net(Variable(images))
+outputs = net(images)
+print("output:",outputs)
 # transform from score to label
-_, predicted = torch.max(outputs.data, 1)
+_, predicted = torch.max(outputs, 1)
 print('Predicted: ', ' '.join('%5s' % classes[predicted[j]]
                               for j in range(4)))
+
+
+
 
 correct = 0
 total = 0
 for data in testloader:
     images, labels = data
-    outputs = net(Variable(images))
-    _, predicted = torch.max(outputs.data, 1)
+    outputs = net(images)
+    _, predicted = torch.max(outputs, 1)
     total += labels.size(0)
     correct += (predicted == labels).sum()
 
@@ -158,8 +165,8 @@ class_correct = list(0. for i in range(10))
 class_total = list(0. for i in range(10))
 for data in testloader:
     images, labels = data
-    outputs = net(Variable(images))
-    _, predicted = torch.max(outputs.data, 1)
+    outputs = net(images)
+    _, predicted = torch.max(outputs, 1)
     c = (predicted == labels).squeeze()
     for i in range(4):
         label = labels[i]
@@ -171,9 +178,9 @@ for i in range(10):
         classes[i], 100 * class_correct[i] / class_total[i]))
 
 PATH = './cifar_net.pth'
-torch.save(net.state_dict(), PATH)
-pretrained_net = torch.load(PATH)
+# torch.save(net.state_dict(), PATH)
+# pretrained_net = torch.load(PATH)
 
-net3 = Net()
+# net3 = Net()
 
-net3.load_state_dict(pretrained_net)
+# net3.load_state_dict(pretrained_net)
