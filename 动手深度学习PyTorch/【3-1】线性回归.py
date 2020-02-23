@@ -63,7 +63,7 @@ w.requires_grad_(requires_grad=True)
 b.requires_grad_(requires_grad=True)
 
 
-def linreg(X, w, b):
+def LinerNet(X, w, b):
     return torch.mm(X, w) + b
 
 
@@ -78,7 +78,7 @@ def sgd(params, lr, batch_size):
 
 lr = 0.03
 num_epochs = 5
-net = linreg
+net = LinerNet
 loss = squared_loss
 
 for epoch in range(num_epochs):  # 训练模型一共需要num_epochs个迭代周期

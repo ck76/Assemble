@@ -4,6 +4,8 @@ import d2lzh_pytorch as d2l
 
 print(torch.__version__)
 
+
+
 # TODO train_iter 里一个输入torch.Size([256, 1, 28, 28])
 # TODO 一个输出torch.Size([256])
 #TODO 每次输出  Size([256, 10])
@@ -31,6 +33,7 @@ def relu(X):
 def net(X):
     X = X.view(size=(-1, num_inputs))
     H = relu(torch.matmul(X, W1) + b1)
+    # TODO mul点乘，mm【前一个是针对二维矩阵，后一个是高维】，matmul矩阵乘
     return torch.matmul(H, W2) + b2
 
 

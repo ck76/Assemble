@@ -16,6 +16,7 @@ net=nn.Sequential(
     nn.ReLU(),
     nn.Linear(num_hiddens, num_outputs),
 )
+print(net)
 
 for params in net.parameters():
     init.normal_(params, mean=0, std=0.01)
@@ -26,4 +27,4 @@ loss = torch.nn.CrossEntropyLoss()
 
 optimizer = torch.optim.SGD(net.parameters(), lr=0.5)
 num_epochs = 5
-d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, batch_size, None, None, optimizer)
+# d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, batch_size, None, None, optimizer)
