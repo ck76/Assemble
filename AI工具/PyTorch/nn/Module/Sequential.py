@@ -125,3 +125,53 @@ model.add_module('relu2', nn.ReLU())
 
 print(model)
 print(model[2])  # 通过索引获取第几个层
+
+
+
+
+net = MySequential(
+        nn.Linear(784, 256),
+        nn.ReLU(),
+        nn.Linear(256, 10),
+        )
+print(net)
+net(X)
+# MySequential(
+#   (0): Linear(in_features=784, out_features=256, bias=True)
+#   (1): ReLU()
+#   (2): Linear(in_features=256, out_features=10, bias=True)
+# )
+# tensor([[ 0.1883, -0.1269, -0.1886,  0.0638, -0.1004, -0.0600,  0.0760, -0.1788,
+#          -0.1844, -0.2131],
+#         [ 0.1319, -0.0490, -0.1365,  0.0133, -0.0483, -0.0861,  0.0369, -0.0830,
+#          -0.0462, -0.2066]], grad_fn=<ThAddmmBackward>)
+
+# TODO ModuleList类
+net = nn.ModuleList([nn.Linear(784, 256), nn.ReLU()])
+net.append(nn.Linear(256, 10)) # # 类似List的append操作
+print(net[-1])  # 类似List的索引访问
+print(net)
+# Linear(in_features=256, out_features=10, bias=True)
+# ModuleList(
+#   (0): Linear(in_features=784, out_features=256, bias=True)
+#   (1): ReLU()
+#   (2): Linear(in_features=256, out_features=10, bias=True)
+# )
+
+# TODO ModuleDict
+net = nn.ModuleDict({
+    'linear': nn.Linear(784, 256),
+    'act': nn.ReLU(),
+})
+net['output'] = nn.Linear(256, 10) # 添加
+print(net['linear']) # 访问
+print(net.output)
+print(net)
+
+# Linear(in_features=784, out_features=256, bias=True)
+# Linear(in_features=256, out_features=10, bias=True)
+# ModuleDict(
+#   (act): ReLU()
+#   (linear): Linear(in_features=784, out_features=256, bias=True)
+#   (output): Linear(in_features=256, out_features=10, bias=True)
+# )
