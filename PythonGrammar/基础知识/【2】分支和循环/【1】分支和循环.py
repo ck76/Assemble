@@ -26,5 +26,5 @@ for each in favourite:
 for i in range(2, 9, 2):  # 步长
     print(i)
 
-for i in range(2, 9):
+for i in range(2, 9):#【）
     print(i)

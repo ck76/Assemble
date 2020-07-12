@@ -1,5 +1,6 @@
 import os
 
+os.chdir("/Users/chengkun/workspace/iBook/李笑来/regular-investing-in-box/Translations/English")
 files = os.listdir()
 contents = []
 for filename in sorted(files):
@@ -12,3 +13,5 @@ for filename in sorted(files):
 
 with open("result.md", "w") as f:
     f.writelines(contents)
+
+
