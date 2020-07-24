@@ -11,7 +11,7 @@ def getStrFirstAplha(str):
     return str.upper()
 
 
-str = '你好在哪来'
+str = '秘境1'
 
 print(getStrAllAplha(str))
 print(getStrFirstAplha(str))
