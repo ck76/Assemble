@@ -1,0 +1,11 @@
+//document.write("<SCRIPT src=\"/inc/webThunderDetect.js\"></"+"SCRIPT>");
+    var thunder_pid = "01045";
+    var restitle = "";
+    
+    document.write("<li class=\"address_like\"><a href='http://jxz1.j9p.com/pc/tetjsxnx.zip' target='_blank' onclick=\"softCount(524538,15732)\">广东电信下载</a></li>");
+document.write("<li class=\"address_like\"><a href='http://jxz1.j9p.com/pc/tetjsxnx.zip' target='_blank' onclick=\"softCount(524538,15732)\">上海电信下载</a></li>");
+document.write("<li class=\"address_like\"><a href='http://jxz1.j9p.com/pc/tetjsxnx.zip' target='_blank' onclick=\"softCount(524538,15732)\">北京电信下载</a></li>");
+document.write("<li class=\"address_like\"><a href='http://jxz1.j9p.com/pc/tetjsxnx.zip' target='_blank' onclick=\"softCount(524538,15732)\">湖南电信下载</a></li>");
+document.write("<li class=\"address_like\"><a href='http://jxz1.j9p.com/pc/tetjsxnx.zip' target='_blank' onclick=\"softCount(524538,15732)\">浙江电信下载</a></li>");
+document.write("<li class=\"address_like\"><a href='http://jxz1.j9p.com/pc/tetjsxnx.zip' target='_blank' onclick=\"softCount(524538,15732)\">湖南移动下载</a></li>");
+
