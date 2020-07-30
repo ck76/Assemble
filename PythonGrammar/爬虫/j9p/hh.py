@@ -10,10 +10,12 @@
 import os
 import urllib
 from urllib import request
+from urllib.error import HTTPError
 
 import requests
 from lxml import etree
 from urllib.parse import parse_qs, urlparse
+
 
 disk_url = "/Users/chengkun/workspace/j9p.com/"
 
@@ -41,9 +43,14 @@ def download_catalog(leibie, page_count, category):
         # TODO 链接 <ul class="ul_Address"><script type="text/javascript" src="/inc/downLoad.asp?Address=tetjsxnx%2Ezip&TypeID=1&SoftLinkID=15732&SoftID=524538"></script></ul>
         ul_Address = parse_html.xpath("//ul[@class='ul_Address']/script/@src")
         book_name = parse_html.xpath("//h1/text()")
+
+        if len(book_name) < 1:
+            print("失败" + "link:" + link)
+            fail_result.append(link)
+            continue
         if len(ul_Address) < 1:
             print("失败" + "link:" + link)
-            fail_result.append(book_name[0] + "#" + link)
+            fail_result.append(link)
             continue
         print(ul_Address[0])
         query_result = urlparse(ul_Address[0]).query
@@ -64,15 +71,25 @@ def download_catalog(leibie, page_count, category):
         if book_name[0] in save_to_dic_names:
             print("  已存在" + book_name[0])
             continue
-        f = request.urlopen(pdf_Address)
-        data = f.read()
-        # 存储位置可自定义
-        if zip_or_pdf:
-            with open(result_book_name + ".zip", 'wb') as code:
-                code.write(data)
-        else:
-            with open(result_book_name + ".pdf", 'wb') as code:
-                code.write(data)
+        try:
+            f = request.urlopen(pdf_Address)
+            data = f.read()
+            # 存储位置可自定义
+            if zip_or_pdf:
+                with open(result_book_name + ".zip", 'wb') as code:
+                    code.write(data)
+            else:
+                with open(result_book_name + ".pdf", 'wb') as code:
+                    code.write(data)
+        except HTTPError:
+            print("HTTPError")
+            print("失败" + "link:" + link)
+            fail_result.append(link)
+        except FileNotFoundError:
+            print("FileNotFoundError")
+            print("失败" + "link:" + link)
+            fail_result.append(link)
+
 
     with open(str(category) + "目录.txt", 'w') as fout:
         for item in address_result:
@@ -84,11 +101,11 @@ def download_catalog(leibie, page_count, category):
             fout.writelines(enter_command)
 
 
-download_catalog(182, 11, "互联网科技")
-download_catalog(183, 35, "文学艺术")
-download_catalog(184, 19, "经济管理")
-download_catalog(185, 13, "社会科学")
-download_catalog(187, 12, "文化历史")
-download_catalog(188, 21, "教程资料")
-download_catalog(189, 34, "生活百科")
-download_catalog(190, 8, "教育相关")
+# download_catalog(182, 11, "互联网科技")
+# download_catalog(183, 35, "文学艺术")
+# download_catalog(184, 19, "经济管理")
+# download_catalog(185, 13, "社会科学")
+# download_catalog(187, 12, "文化历史")
+# download_catalog(188, 21, "教程资料")
+# download_catalog(189, 34, "生活百科")
+# download_catalog(190, 8, "教育相关")
