@@ -16,48 +16,233 @@ import os
 html_path = "/Users/chengkun/workspace/iBook/语言学/日语/芥末语法1-792/"
 json_list = os.listdir("./json/")
 
-print(json_list)
-for json_item in json_list:
-    n1_json = open("./json/" + json_item).read()
-    n1 = json.loads(n1_json)
-    print(n1)
-    data = n1.get("data")
-    print(data[0].get("level"))
-    for item in data:
-        # print(item.get("id"))
-        title = item.get("title")
-        print(title)
-        grammerList = item.get("grammerList")
-        for grammer_item in grammerList:
-            grammar = grammer_item.get("grammar")
-            grammer_id = grammer_item.get("id")
-            print(grammer_id)
-            parse_html = etree.parse(html_path + str(grammer_id) + ".html", etree.HTMLParser())
-            span_s = parse_html.xpath("//span/text()")
-            p_s = parse_html.xpath("//p/text()")
-            # ['语法内容', '解说', '接続', '例文', '注意点', ' 相关文法']
-            print(span_s)
 
-            # print(p_s)
-            with open("jlpt.md", 'w') as code:
-                pass
-                for i in range(0,len(span_s)):
-                    if span_s[i]=="相关文法":
+def all():
+    with open("jlpt.md", 'w') as code:
+        count = 0
+        print(json_list)
+        for json_item in json_list:
+            # if count == 1:
+            #     break
+            code.write("[TOC]")
+            code.write("\n")
+            n1_json = open("./json/" + json_item).read()
+            n1 = json.loads(n1_json)
+            print(n1)
+            data = n1.get("data")
+            print(data[0].get("level"))
+            level = data[0].get("level")
+            code.write("### " + level)
+            code.write("\n")
+            count = count + 1
+            for item in data:
+                # print(item.get("id"))
+                title = item.get("title")
+                code.write("#### " + title)
+                code.write("\n")
+                print(title)
+                grammerList = item.get("grammerList")
+                for grammer_item in grammerList:
+                    grammar = grammer_item.get("grammar")
+                    grammer_id = grammer_item.get("id")
+                    print(grammer_id)
+                    parse_html = etree.parse(html_path + str(grammer_id) + ".html", etree.HTMLParser())
+                    span_s = parse_html.xpath("//span/text()")
+                    p_s = parse_html.xpath("//p/text()")
+                    # ['语法内容', '解说', '接続', '例文', '注意点', ' 相关文法']
+                    print(span_s)
 
-                        continue
-                    code.write(span_s[i]+"\n")
-                    code.write(p_s[i].replace("\n", "").replace("                ", "").replace("            ", ""))
-                    if
-                    code.write("\n")
-                # for item in span_s:
-                #     code.write(item)
-                # for item in p_s:
-                #     code.write(item.replace("\n", "").replace("                ", "").replace("            ", ""))
-                #     code.write("\n")
-                    # print(item.replace("\n",""))
-                # code.write(span_s)
-                # code.write(p_s)
+                    print(p_s)
+                    print(len(span_s))
+                    print(len(p_s))
+                    for i in range(0, len(span_s) - 1):
+                        if span_s[i] == "语法内容":
+                            code.write("##### " + p_s[0]
+                                       .replace("\n", "")
+                                       .replace("    ", "")
+                                       .replace("                ", "")
+                                       .replace("            ", "") + "\n")
+                            code.write("\n")
+                            continue
+                        code.write("```c")
+                        code.write("\n")
+                        code.write("//" + span_s[i])
+                        code.write("\n")
+                        if span_s[i] == "例文":
 
+                            code.write(
+                                p_s[i]
+                                .replace("\n", "")
+                                .replace("    ", "")
+                                .replace("                ", "")
+                                .replace("            ", "")
+                                .replace("／", "\n//") + "\n")
+                            code.write(
+                                p_s[i + 1]
+                                .replace("\n", "")
+                                .replace("    ", "")
+                                .replace("                ", "")
+                                .replace("            ", "")
+                                .replace("／", "\n//") + "\n")
+
+                        elif span_s[i] == "注意点":
+
+                            code.write(
+                                p_s[i + 1]
+                                .replace("\n", "")
+                                .replace("    ", "")
+                                .replace("                ", "")
+                                .replace("            ", "")
+                                .replace("／", "\n//") + "\n")
+
+                        else:
+
+                            code.write(
+                                p_s[i]
+                                .replace("\n", "")
+                                .replace("    ", "")
+                                .replace("                ", "")
+                                .replace("            ", "") + "\n")
+
+                        code.write("```")
+                        code.write("\n")
+                        code.write("\n")
+
+
+def ck(files):
+    print(files)
+    for item in files:
+        print()
+        file_name = item.split(".")[0]
+        with open(file_name + ".md", "w") as code:
+            print()
+            count = 0
+            # if count == 1:
+            #     break
+            code.write("[TOC]")
+            code.write("\n")
+            n1_json = open("./json/" + item).read()
+            n1 = json.loads(n1_json)
+            print(n1)
+            data = n1.get("data")
+            print(data[0].get("level"))
+            level = data[0].get("level")
+            code.write("### " + level)
+            code.write("\n")
+            count = count + 1
+            for item in data:
+                # print(item.get("id"))
+                title = item.get("title")
+                code.write("#### " + title)
+                code.write("\n")
+                print(title)
+                grammerList = item.get("grammerList")
+                for grammer_item in grammerList:
+                    grammar = grammer_item.get("grammar")
+                    grammer_id = grammer_item.get("id")
+                    print(grammer_id)
+                    parse_html = etree.parse(html_path + str(grammer_id) + ".html", etree.HTMLParser())
+                    span_s = parse_html.xpath("//span/text()")
+                    p_s = parse_html.xpath("//p/text()")
+                    # ['语法内容', '解说', '接続', '例文', '注意点', ' 相关文法']
+                    print(span_s)
+
+                    print(p_s)
+                    print(len(span_s))
+                    print(len(p_s))
+                    for i in range(0, len(span_s) - 1):
+                        if span_s[i] == "语法内容":
+                            code.write("##### " + p_s[0]
+                                       .replace("\n", "")
+                                       .replace("    ", "")
+                                       .replace("                ", "")
+                                       .replace("            ", "") + "\n")
+                            code.write("\n")
+                            continue
+                        code.write("```c")
+                        code.write("\n")
+                        code.write("//" + span_s[i])
+                        code.write("\n")
+                        if span_s[i] == "例文":
+
+                            code.write(
+                                p_s[i]
+                                .replace("\n", "")
+                                .replace("    ", "")
+                                .replace("                ", "")
+                                .replace("            ", "")
+                                .replace("／", "\n//") + "\n")
+                            code.write(
+                                p_s[i + 1]
+                                .replace("\n", "")
+                                .replace("    ", "")
+                                .replace("                ", "")
+                                .replace("            ", "")
+                                .replace("／", "\n//") + "\n")
+
+                        elif span_s[i] == "注意点":
+
+                            code.write(
+                                p_s[i + 1]
+                                .replace("\n", "")
+                                .replace("    ", "")
+                                .replace("                ", "")
+                                .replace("            ", "")
+                                .replace("／", "\n//") + "\n")
+
+                        else:
+
+                            code.write(
+                                p_s[i]
+                                .replace("\n", "")
+                                .replace("    ", "")
+                                .replace("                ", "")
+                                .replace("            ", "") + "\n")
+
+                        code.write("```")
+                        code.write("\n")
+                        code.write("\n")
+
+
+def all_label():
+    print()
+    with open("label.md", 'w') as code:
+        count = 0
+        print(json_list)
+        for json_item in json_list:
+            # if count == 1:
+            #     break
+            code.write("[TOC]")
+            code.write("\n")
+            n1_json = open("./json/" + json_item).read()
+            n1 = json.loads(n1_json)
+            print(n1)
+            data = n1.get("data")
+            print(data[0].get("level"))
+            level = data[0].get("level")
+            code.write("### " + level)
+            code.write("\n")
+            count = count + 1
+            for item in data:
+                # print(item.get("id"))
+                title = item.get("title")
+                code.write("#### " + title)
+                code.write("\n")
+                print(title)
+                grammerList = item.get("grammerList")
+                for grammer_item in grammerList:
+                    grammar = grammer_item.get("grammar")
+                    grammer_id = grammer_item.get("id")
+                    print(grammer_id)
+                    parse_html = etree.parse(html_path + str(grammer_id) + ".html", etree.HTMLParser())
+                    span_s = parse_html.xpath("//span/text()")
+                    p_s = parse_html.xpath("//p/text()")
+                    # ['语法内容', '解说', '接続', '例文', '注意点', ' 相关文法']
+
+
+
+# ck(json_list)
+all_label()
 
 """
 ### N1

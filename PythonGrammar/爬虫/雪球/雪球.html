@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="keywords"
+          content="万字长文——互联网广告到底是如何运行的？ 自互联网诞生之后，广告这个历史悠久的行业就被永远地改变。 卫夕一直致力于普及互联网广告的基本逻辑，始终认为这是一个对行业...,雪球">
+    <meta name="description"
+          content="自互联网诞生之后，广告这个历史悠久的行业就被永远地改变。 卫夕一直致力于普及互联网广告的基本逻辑，始终认为这是一个对行业意义的事，为此我做了一个40分钟的视频分享给大家—— 卫夕希望这个科普课程视频可以达到两个目标——第一，即便是没有从事过广告的小白用户也能看懂，明白其中的逻辑...">
+    <meta name="format-detection" content="telephone=no">
+    <meta content="always" name="referrer">
+    <link href="//assets.imedao.com/ugc/js/vue-common-6040863c71.js" rel="preload" as="script">
+    <link href="//assets.imedao.com/ugc/js/vue-article-54de0075ad.js" rel="preload" as="script">
+    <link href="//assets.imedao.com/images/favicon.png" rel="icon" type="image/png">
+    <link href="//assets.imedao.com/ugc/css/han-e775a8b9c7.css" rel="stylesheet">
+    <link rel="stylesheet" href="//assets.imedao.com/ugc/css/component/index-043d02fc29.css">
+    <title>万字长文——互联网广告到底是如何运行的？ 自互联网诞生之后，广告这个历史悠久的行业就被永远地改变。 卫夕一直致力于普及互联网广告的基本逻辑，始终认为这是一个对行业... - 雪球</title>
+    <script>window.HANS = true;</script>
+    <link href="//assets.imedao.com/ugc/css/article-0e092fa017.css" rel="stylesheet">
+    <script>window.SNOWMAN_USER = {};</script>
+    <script>window.SNB = {
+  staticDomain: 'https://assets.imedao.com/'
+};
+
+    </script>
+</head>
+<body>
+<div id="app">
+    <div class="nav__placeholder"></div>
+    <nav class="nav stickyFixed">
+        <div class="container">
+            <div class="nav__lf"><a class="nav__logo" href="/" data-analytics="31"
+                                    data-analytics-data="{type: '雪球图标'}"></a>
+                <div class="nav__menu"><a class="nav__menu__item" href="/" data-analytics="31"
+                                          data-analytics-data="{type: '首页'}">首页</a>
+                    <nav-essence></nav-essence>
+                    <a class="nav__menu__item" href="/ask/square" data-analytics="31"
+                       data-analytics-data="{type: '问答'}">问答</a>
+                    <div class="nav__menu__item">行情<i></i>
+                        <div class="nav__dropdown__container"><i></i>
+                            <div class="nav__dropdown"><a href="/hq">行情中心</a><a href="/hq/screener">筛选器</a><a
+                                    href="/hq#xgss">新股上市</a><a href="/p/discover">买什么</a></div>
+                        </div>
+                    </div>
+                    <div class="nav__menu__item">交易<i></i>
+                        <div class="nav__dropdown__container"><i></i>
+                            <div class="nav__dropdown"><a href="https://broker.xueqiu.com" target="_blank">A股交易</a><a
+                                    href="https://www.snowballsecurities.com/?r=30003002&amp;utm_term=jiaoyigmg&amp;utm_campaign=sy&amp;utm_medium=gdw&amp;utm_source=xueqiupc"
+                                    target="_blank">港美股交易</a><a href="https://danjuanfunds.com" target="_blank">蛋卷基金</a><a
+                                    href="/f/home" target="_blank">私募中心</a></div>
+                        </div>
+                    </div>
+                </div>
+                <search></search>
+            </div>
+            <div class="nav__rt">
+                <div class="nav__login"><a class="pc__btn--download" href="#" data-analytics="34">下载App</a>
+                    <div class="pc__hd__qrcode__dropdown" data-type="pcicon">
+                        <svg class="triangle" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <path class="arrow" d="M5 0 L 0 4 L 10 4"></path>
+                        </svg>
+                        <span>扫一扫，下载</span>
+                        <div class="qrcode home__sprite sprite-qrcode-xueqiuapp"></div>
+                    </div>
+                    <div class="nav__login__btn" data-analytics="31" data-analytics-data="{type: '登录'}"><i
+                            class="iconfont">&#xe6f6;</i><span>登录/注册</span></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container article__container">
+        <div class="article__author"><!--user_id = -1 股票头像--><a class="avatar" href="/1803026560" target="_blank"
+                                                                data-screenname="卫夕" data-tooltip="1803026560"><img
+                src="//xavatar.imedao.com/community/20196/1564220180075-1564220195841.jpg!100x100.png" alt="卫夕"/></a>
+            <div class="avatar__name"><a class="name" href="/1803026560" target="_blank" data-screenname="卫夕"
+                                         data-tooltip="1803026560">卫夕<span class="user-remark"
+                                                                           style="display:none">()</span><img
+                    class="user-auth" src="//assets.imedao.com/ugc/images/profiles/new/identity_icon_3-955def17cc.png"
+                    title="认证"/></a></div>
+            <div class="avatar__subtitle"><span class="source">来自雪球</span><a class="time" href="/1803026560/151658213"
+                                                                             data-created_at="1592270597000"
+                                                                             target="_blank">发布于06-16 09:23</a></div>
+            <div class="user__follow__wrap" data-following="0">
+                <div class="button button-sm user__follow"><i class="iconfont">&#xe6ff;</i>关注</div>
+            </div>
+        </div>
+        <article class="article__bd"><h1 class="article__bd__title">万字长文——互联网广告到底是如何运行的？</h1><!-- 专栏入口-->
+            <div class="article__bd__detail"><!-- 新闻正文图片--><p style="display:none;">来源：雪球App，作者：
+                卫夕，（https://xueqiu.com/1803026560/151658213）</p>
+                <p>自互联网诞生之后，广告这个历史悠久的行业就被永远地改变。</p>
+                <p>卫夕一直致力于普及互联网广告的基本逻辑，始终认为这是一个对行业意义的事，<b>为此我做了一个40分钟的视频分享给大家——</b></p>
+                <p>卫夕希望这个科普课程视频可以达到两个目标——<b>第一，即便是没有从事过广告的小白用户也能看懂，明白其中的逻辑。第二，即便是行业内的资深人士也能有启发和收获</b>；</p>
+                <p>要同时完成这个目标并不容易，欢迎大家留言，不喜欢看视频版的也可以直接看下边的文字版！</p>
+                <p><a href="https://v.qq.com/iframe/preview.html?width=500&height=375&auto=0&vid=l3079003l9i"
+                      rel="nofollow"
+                      title="https://v.qq.com/iframe/preview.html?width=500&height=375&auto=0&vid=l3079003l9i"
+                      target="_blank" class="status-link">网页链接</a></p>
+                <p>以下为文字版全文——</p>
+                <p>你好，欢迎来到我的讲座，我是卫夕。</p>
+                <p>是一名广告专栏作者，同时也是一名广告产品经理，先后在新浪微博和美图公司设计竞价广告系统。</p>
+                <p>今天就和大家一起来聊一聊互联网广告的基本逻辑。</p>
+                <p>“它无处不在，你无处可逃。”</p>
+                <p>这是朋友圈广告上线时候的一句宣传语，的确，广告已经成为我们生活的一部分，一提起广告，很多人的一致反馈就是——<b>“不要和我聊广告，我讨厌广告！”</b></p>
+                <p>但我要说，广告有着极其重要的意义。</p>
+                <p>你可能会说你是做广告的，当然要说广告有意义，我说的这个意义不仅仅是对广告主，对广告媒体有意义，而是对于我们每一个人而言，广告也有着重要的意义。</p>
+                <p>那么对于个人广告的意义到底是什么？</p>
+                <p>广告第一个被忽视的意义就是它可以降低商品的价格。</p>
+                <p>你可能会疑惑，那像大众汽车每年花66亿美元做广告、可口可乐每年花50亿美元，宝洁82亿、联合利华80亿欧元，这些广告费从哪里来，那他不还是我们消费者来买单吗？</p>
+                <p>他要不打广告，我买车肯定要便宜不少，但是真的是这样吗？</p>
+                <p>我们来看两个案例——</p>
+                <p>第一个例子，在京东上每年花50亿美元打广告的可口可乐的价格是一箱59.9。</p>
+                <p>而同样的规格同样是500ml，24瓶，从来不打广告，以至于你可能都没有听过的崂山可乐的价格是每箱68。</p>
+                <p>你看花钱做广告，反而卖的更便宜。</p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab87b09284c83fddde60.png"/></p>
+                <p>我们再来看一个天然的例子：</p>
+                <p>1972年的芝加哥大学的本哈姆教授发表一篇论文，在这篇论文中，他研究60年代美国不同州的眼镜的价格。</p>
+                <p>结果发现在那些允许做广告的州眼镜的平均价格是26美元，而那些不允许做广告的州眼镜的平均价格是33美元。</p>
+                <p>不打广告卖的更贵，花钱打广告反而更便宜，那么这到底是为什么？</p>
+                <p>答案是广告带来的规模效应，通过广告，消费者更多生产的规模就能提升，而规模的提升又会反过来降低平均的价格。</p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab87e94283e23fa866e9.png"/></p>
+                <p>接下来我们看一下广告第二个被忽视的意义，就是它可以降低我们的选择成本。</p>
+                <p>假如现在所有的洗发水都不打广告，这时候我们的超市会如何去选择去屑的洗发水？</p>
+                <p>我们至少要阅读很多次的说明书，挑出带去屑功能的，我们可能还要比较它们的成分，产地，功效以及价格；</p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab88201284793fe64f01.png"/></p>
+                <p>比起现在走到超市直接拿走一瓶海飞丝，我们刚刚做的这一系列动作，就是我们的选择成本。</p>
+                <p>那么广告第三个被忽视的意义就是他能够用我们免费的使用很多的产品——</p>
+                <p>谷歌——免费的，微信——免费的，微博——也是免费的，有人说这些本来就是免费的。</p>
+                <p>我们不要忘，没有广告模式的Windows和Photoshop是如此的昂贵：</p>
+                <p>Windows的零售价是1088，Photoshop的惊喜价是3485。</p>
+                <p>有人说我从来没为Windows付过费呀，那是因为你违法使用盗版，或者你买电脑的时候已经加载电脑售价里面。</p>
+                <p>广告，甚至还降低硬件的价格，在美国，Kindle带广告的版本会比不带广告的版本便宜25美元。</p>
+                <p>所以说广告意义重大。</p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab8854b286913fdbb748.png"/></p>
+                <p>而广告做一个行业在过去几十年发生的最重要的变化就是从传统广告到互联网广告的转变。</p>
+                <p>但是对于互联网广告，我们可能还有很多的疑惑——</p>
+                <p>比如微信朋友圈第一次投放的三个广告组分别是可口可乐，宝马，中博和vivo，有人就会问，凭什么我看到的是可口可乐，诶，我老公看到的是宝马，难道我老公是隐形的富豪？</p>
+                <p>还有人会疑惑，不是说精准投放吗？为什么我一个男生还会在手机上看到护舒宝的广告？</p>
+                <p>还有，为什么我白天在京东上看到一款相机，晚上刷今日头条的时候就看到这款相机的广告？</p>
+                <p>以上三个问题反映我们对互联网广告的运作模式还不太解。</p>
+                <p>不仅我们不知道，就连美国的参议员也不知道：</p>
+                <p>在Facebook的CEO扎克伯格的国会听证会上，参议员哈奇就问这样一个问题——<b>“Facebook不是免费的吗？你们怎么赚钱？”</b></p>
+                <p>这是一道送分题，所以扎克伯格很轻松的回答说——<b>“议员先生是这样，我们有广告。”</b></p>
+                <p>广告是互联网的最大的商业模式，互联网广告他到底是如何运作的？它的基本逻辑是什么？了解这些基本逻辑对我们广告投放有什么意义？</p>
+                <p>这就是我们今天要讨论的话题，我会从宏观和微观两个部分来剖析互联网广告最基本的运作逻辑。</p>
+                <p>宏观部分</p>
+                <p>我们首先来看宏观部分，我们从一个极其宏观的数字开始说起，广告占GDP的比重。</p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab88aa72845d3fdafe4b.png"/></p>
+                <p>首先我们来看美国的数据，1919年到2017年广告占美国GDP的比重基本保持不变，长期徘徊在2%到5%之间。</p>
+                <p>广告占GDP的比重基本保持不变，并不是美国所独有的，中国其实也一样，只不过中国的占比比美国要低一些，只有0.88%，而作为对比中国的国防支出占比是1.3%。</p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab88e49285fc3fe04075.png"/></p>
+                <p>大家可以看到课程中的这张谷歌收入的增长趋势图，我们看到谷歌每年的增长率其实都超过20%，我们刚刚说广告占GDP的比重保持不变，而GDP的增长其实是比较缓慢的，比如说中国大概6%，美国大概是1%。</p>
+                <p>那么像谷歌这些以广告为核心的互联网公司，每年高达20%的高速增长是怎么样实现的？</p>
+                <p>有人说那因为谷歌是头部公司，他表现比较好吧，但事实上像美图这样的中部公司广告收入也在快速增长，甚至它的增速比谷歌还要快。</p>
+                <p>那有人又会说，那是不是头部公司增长比较快，尾部的小媒体肯定就比较惨吧？</p>
+                <p>事实上，像我的公众号“卫夕指北”之类的长尾媒体，今年的广告费也要比去年要多不少。</p>
+                <p>那么问题就来了——广告的总盘子基本保持不变，或者说增长极其缓慢，而不管是大型的互联网公司还是常规的媒体广告收入都在快速增长，那么到底是谁在跌呢？</p>
+                <p>答案是，传统广告在跌，他们都被互联网广告所取代了。</p>
+                <p>不管是在中国还是在美国，互联网广告高歌猛进的同时，其实是传统广告不可避免的下滑。</p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab8952b2845f3fa33381.png"/></p>
+                <p>你可以看到课程中的这张全球广告市场的趋势图，2000年传统广告的份额几乎是百分之百，而到20年之后的今天，他的份额下降到50%，也就是说，全球广告有一半的份额都被互联网广告所取代。</p>
+                <p>那接下来也会问——为什么传统广告变成互联网广告？</p>
+                <p>答案其实也很简单，因为互联网占据大家的时间。</p>
+                <p>我们来看一个有趣的数据变迁——互联网分析师玛丽米克尔每年会发布互联网的年度报告报告，从09年开始，每年都会有一页PPT专门来披露各类媒体的广告收入占比和用户时长占比。</p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab898c8284483fa6d44c.png"/></p>
+                <p>我们直接对比2009年到2018年的数据，纸媒从09年的26%下降到18年的7%，而互联网从09年的13%上升到18年的51%，而互联网也正好占据人们51%的时间。</p>
+                <p>我们之所以说广告是互联网最大的商业模式，是因为世界上最赚钱的互联网公司，比如说谷歌，Facebook，阿里巴巴等等，他们几乎都是以广告为生。</p>
+                <p>无论是在中国还是在美国，互联网广告市场基本上都被几大巨头所瓜分。</p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab89f292816f3fb20095.png"/></p>
+                <p>接下来的问题就是——为什么这些巨头的市场份额会如此之大？</p>
+                <p>当然是巨头们占据大部分的用户时长，从课程的图片中我们可以看到——腾讯、字节跳动、阿里、百度占据中国互联网超过70%的用户时长。</p>
+                <p>那么互联网广告和传统广告到底有什么区别？</p>
+                <p>第一，互联网广告改变广告市场的结构；</p>
+                <p>第二，互联网广告从技术上和产品上改变广告实现的逻辑。</p>
+                <p>互联网给广告带来的一个重要转变就是广告主更加丰富。</p>
+                <p>如果我问——央视一个月有多少个广告主？奥美一个月能服务多少个广告主？超级碗一届能播出多少个广告？答案是：非常的少。</p>
+                <p>然后我们再来看Facebook一个月有多少个广告主？谷歌一年有多少个广告主？百度一个季度又有多少个广告主？</p>
+                <p>这个答案会多得超出你的想象——</p>
+                <p>Facebook根据他的财报，2017年有超过五百万个月活跃广告主；</p>
+                <p>谷歌有多少它没有透露过，但是仅仅在2018年，谷歌就屏蔽掉72.3万个违规账户。</p>
+                <p>百度根据它的财报，2018年q4的广告主有52.9万之多。</p>
+                <p>然后我们再来看我们如果到央视去打一个广告，从开始到结束要多长时间，这肯定是一个非常漫长的过程，但是我们到快手，微博和抖音去投放一个广告需要多长时间？</p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab8a2ca284c93fe1379d.png"/></p>
+                <p>答案是一分钟，我们在手机上选择广告内容，广告定向，并且立即支付，很轻松就完成一次广告投放。</p>
+                <p>那么为什么互联网时代的广告能够做到这样呢？</p>
+                <p>微观部分</p>
+                <p>接下来我们就进入广告逻辑的微观部分。</p>
+                <p>很多人在投放互联网广告的时候都会面临着很多的疑惑——</p>
+                <p>比如说互联网广告的投放真的是太复杂，有没有一些原则是需要遵循的？</p>
+                <p>我应该从哪些方面来全面的提升广告投放的回报率？</p>
+                <p>接下来我就通过一个案例引发的六个问题，和大家一起来聊一下互联网广告运行的微观逻辑，以及我们到底应该如何投放互联网广告。</p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab8a5a5286923fdc3edb.png"/></p>
+                <p>大家可以看到课程中的这张图，我们从一条普通的微信朋友圈广告说起，这是我在朋友圈收到一条刘涛给伊利做的广告。</p>
+                <p>这样的广告我们每天都会看见，但是广告就像一座冰山，我们能看到的部分只是冰山水面以上的部分，<b>其实还有更多的部分隐藏在水面以下，它的背后其实是一个非常复杂的系统。</b></p>
+                <p>OK，我们来看一下冰山底下到底有什么，我提出六个问题；</p>
+                <p><b>第一，是微信会收集哪些信息来投放广告？</b></p>
+                <p><b>第二，是为什么你看到的是这个广告而不是其他广告？</b></p>
+                <p><b>第三，这个广告的投放和传统广告的投放有什么区别？</b></p>
+                <p><b>第四，为什么头像是刘涛，这背后的意义到底是什么？</b></p>
+                <p><b>第五，为什么微信我们每天只能看到两到三条广告，而微博、头条，每天我们可以看到更多？</b></p>
+                <p><b>第六，广告下边的点赞和评论对广告而言到底又意味着什么？</b></p>
+                <p>这六个问题其实是可以分成两类，前面三个是和技术相关，后面三个和产品相关，而每一个问题他都会对应一个关键词，这六个关键词分别是——<b>数据、竞价、自动化、原生广告、频次控制和互动性。</b></p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab8a83d284603fe3f1e4.png"/></p>
+                <p><b>问题一：微信会收集我哪些信息来投放广告？</b></p>
+                <p>微信会收集我哪些信息来投放广告？它对应的关键词叫数据。</p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab8ab68286933fd7ad87.png"/></p>
+                <p>在广告界有一个叫哥德巴赫猜想，就是：</p>
+                <p><b>我知道我的广告费有一半都被浪费掉，但就是不知道哪一半。</b></p>
+                <p>这是一位零售大亨在70年代说的，它在本质上是在控诉广告的不精准，但是今天这个难题在一定程度上被解决了。</p>
+                <p>互联网广告就像红娘，红娘连接的是男人和女人，而<b>广告一边是广告主的需求，一边是用户的特征，广告系统就把他们两边匹配起来。</b></p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab8afed283e43fdf8725.png"/></p>
+                <p>接下来我们说一下广告精准性的进化史——</p>
+                <p>最开始我们是通过媒介定向，像比如说中央五套、比如说南方都市报；</p>
+                <p>在互联网的门户时代，我们通过内容来定向，像比如说新浪网的各个频道；</p>
+                <p>接着到搜索的时代，我们是通过意图来定向；</p>
+                <p>最后到我们今天的社交媒体短视频的时代，我们是通过人群属性去进行广告定向。</p>
+                <p>刚刚我们说微信会收集哪些信息来投放广告，这就涉及到微信广告的用户画像体系：</p>
+                <p>由于腾讯有众多的产品矩阵，因此<b>他能从六个平台获取交叉的数据，从而去构建一个非常立体的，精准的用户画像。</b></p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab8b2e42844e3fe37581.png"/></p>
+                <p>
+                    这六个平台分别是：社交平台，比如说qq；微信游戏平台，比如说我们每天玩的手机游戏；广告平台，比如说腾讯的广点通，品牌广告，视频广告等等；还有媒体工具，比如说腾讯网，腾讯视频等等；还有基础平台和电商生活平台。</p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab8b76e2844a3fc4fa12.png"/></p>
+                <p>然后我们再来看一下阿里是如何挖掘广告数据的，<b>和大家的印象不同，阿里其实不仅仅只有电商和支付的数据</b>，通过收购高德地图、UC浏览器、优酷等等，阿里能够全方位的去构建一个完整的用户画像。</p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab8bb30286013fbf92d7.png"/></p>
+                <p>然后我们再来看一下字节跳动的广告定向，通过抖音、今日头条、西瓜、火山、懂车帝这些App，头条也能准确的知道用户的兴趣以及他相应的行为。</p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab8bf222844c3fdb0867.png"/></p>
+                <p>课程中的这张图是Facebook的广告定向后台，通过Facebook，Instagram，Whatsapp这些应用收集相应的数据，Facebook的广告系统的定向维度也非常的精准。</p>
+                <p>当然数据和数据的重要性也是不一样的——</p>
+                <p>我们来比较两类不同的数据，<b>在互联网的早期，以百度、淘宝为代表的产品主要解决的是有用的问题</b>，更多的是为大家Save
+                    time，就是节省时间，是满足已有的需求，是存量，这时候的数据重要性高，但是维度和量都比较少。</p>
+                <p>而<b>今天以朋友圈，抖音为代表的产品，主要解决的是有趣的问题</b>，更多的是Kill time，就是杀你的时间，是挖掘大家的新需求，是增量，这时候数据的重要性没那么高，但是维度和总量都要多很多。
+                </p>
+                <p>数据，彻底改变了广告。</p>
+                <p><b>在谷歌的广告信息页面，它会直接告诉你他收集你哪些信息来投放广告。</b></p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab8c2c3286993fe8e064.png"/></p>
+                <p>大家可以看到课程中的这张图，这是谷歌广告设置页面给我打的标签——</p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab8c5d2284503fce5275.png"/></p>
+                <p>我其实很少用谷歌的产品，偶尔用一下搜索，翻译和YouTube，但是谷歌神奇的地方在于，他给我打的标签有着极高的准确性，这些标签90%都是非常准确的数据，让广告的精准性发生巨大的变化。</p>
+                <p>谷歌广告系统前核心成员郄小虎透露，<b>谷歌首页的第一条广告的点击率高达30%到40%</b>，也就是几乎有一半的人都会点谷歌的第一条广告，而作为对比在报纸时代一条广告有5%的人感兴趣，就是一个不起的成绩。
+                </p>
+                <p>下面，我们通过两个故事来直观理解一下广告系统的精准性。</p>
+                <p>首先，是张一鸣早期创业的故事，头条的CEO张一鸣早年创业的时候公司需要大量用到Python那个时候，Python这种语言还不怎么流行，因此，招人就特别不容易。</p>
+                <p>张一鸣没有去拉勾这些垂直的招聘网站上去打广告，那么他是怎么样做的？</p>
+                <p><b>他选择去百度买和Python相关的关键词广告</b>，比如说Python里的一些函数，因为只有Python的工程师才会去搜这些关键词，结果这些关键词很冷门、很便宜，招聘的效果也很有效。</p>
+                <p>然后我们再来看一位硅谷工程师的故事，硅谷有一位工程师想去一家叫Reddit的的网站工作，他能想到一个非常有意思的方法，他首先写一篇水平很高，关于怎么样改进这个网站推荐算法的文章。</p>
+                <p>接着，他通过网站的CEO霍夫曼在Facebook的公开账号寻找到一些独特的广告定向，然后他通过Facebook的广告系统使用这些定向把自己的文章投放给197个人，在<b>这197个人中居然就精准的命中霍夫曼，而这次推广仅仅花他10.6美元</b>，最后他的文章被霍夫曼所认可，而他也被这个网站成功的录取。
+                </p>
+                <p>通过这两个故事，我们可以看到——<b>有了精准的数据广而告之就变成窄而告之。</b></p>
+                <p>所以<b>从这个意义上讲，互联网广告其实更应该被称之为窄告。</b></p>
+                <p>数据就是新时代的石油，所以Facebook，谷歌就是数字时代的标准石油，而腾讯阿里就是数字时代的中石油和中石化。</p>
+                <p>OK，我们对这一小节做一个总结——<b>我们如何利用数据把广告投放给我们的目标用户？</b></p>
+                <p><b>答案是充分的挖掘有价值的数据去进行广告投放</b>，它包括第一方数据，第二方数据和第三方数据。</p>
+                <p>所谓第一方数据就是广告主自己的数据，比如说客户的邮箱，手机等等。</p>
+                <p>第二方数据就是广告平台能够提供的数据，比如说我们上面说的阿里，腾讯的各个维度的数据。</p>
+                <p>第三方数据就是第三方的数据公司提供的数据，比如说通过数据市场获取的数据。</p>
+                <p><b>问题二：为什么给一个人展示的是这个广告，而不是其他广告？</b></p>
+                <p>OK，我们来看<b>第二个问题——为什么给一个人展示的是这个广告，而不是其他广告</b>，它涉及的关键词叫竞价。</p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab8c8a6284623f8e44e7.png"/></p>
+                <p>我们通过一个极其简单的例子来理解竞价——</p>
+                <p>一个篮子总共有三个红苹果和三个青苹果，这时候有两个人，第一个人只喜欢吃红苹果不喜欢吃青苹果，所以他愿意为一个红苹果出价一块钱，青苹果出价就是0，另一个人正好和他相反。</p>
+                <p>这时候问题就来了——我们有两种售卖方式，第一种售卖方式：把整个篮子卖给其中的一个人，这时候我们的收入是三块钱。</p>
+                <p>第二种方式，就是我们能够把红苹果和青苹果分开分别卖给他们，我们的收入就有三块加三块等于六块。</p>
+                <p>如果我们把广告看成刚刚例子中的苹果，那么通过这个例子，我们可以得出以下的结论：</p>
+                <p><b>第一，竞价的前提是人们对不同广告的价值判断其实是不一样的。</b></p>
+                <p><b>第二，互联网的技术能够对不同的广告进行有效的区隔，</b></p>
+                <p><b>第三，进价能够实现资源配置的最优化，</b></p>
+                <p>OK，我们回到开始的这个问题，为什么你看到的是这个广告而不是其他广告？</p>
+                <p>大家可以看到课程中的这个示意图，<b>假如广告系统通过数据识别到小明是一名生活在北京25岁，对健身感兴趣的男性。</b></p>
+                <p><b>那么广告是怎么样投放给他的？</b></p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab8cdc8281713fe6028d.png"/></p>
+                <p><b>广告系统投放其实非常的复杂，但其中有两个关键的步骤</b>：</p>
+                <p>第一步叫Target，就是匹配，这一步会在全体的广告库中找到符合小明这个定向的广告，比如说图中的A、C、E；</p>
+                <p>第二步叫Rank，就是竞价排序，这一步，会挑出排在最前面的广告发给小明就是图中的C。</p>
+                <p>这时候小明就看到了C这个广告。</p>
+                <p>那么问题来了，广告的竞价排序是如何进行的？</p>
+                <p><b>假如现在我们有两个广告主——Nike出价一块钱一个点击、阿迪出价两块钱一个点击，我们总共有100次曝光，我们应该给谁？</b></p>
+                <p>很多人会直观的说，那当然得给阿迪，它出价高啊！</p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab8d16f284513fd1196d.png"/></p>
+                <p>但如果我们考虑到点击率，结果就会大不一样，假如耐克的点击率是5%，100次曝光就会产生五个点击一块钱一个点击收入是五块钱。</p>
+                <p>而这时候如果阿迪的点击率是1%，那么100次曝光就会产生一个点击，两块钱一个点击收入是两块。</p>
+                <p>所以两块对五块，我们应该给耐克，不是阿迪，因为它的综合收益更高。</p>
+                <p>我们不要看这个案例非常简单，但他揭示按效果付费竞价广告的几个最重要的法则。</p>
+                <p><b>第一，广告平台关心自己流量的总收益；</b></p>
+                <p><b>第二，广告主通常按效果进行出价，比如说这次就是按单次的点击进行竞价；</b></p>
+                <p><b>第三，广告平台需要把点击出价转化成它的收益去进行排序；</b></p>
+                <p><b>第四，CTR也就是点击率就架起从点击到收益的一座桥梁，未排序去提供基础。</b></p>
+                <p>所以，在竞价广告中，点击率就是一个极其关键的指标。</p>
+                <p>那么问题就来了——点击率它是一个结果指标，就是我们投放完之后，我们可以去统计这个点击率，没有投放之前，我们其实是不知道的，而<b>每一次投放都需要排序。</b></p>
+                <p><b>那么点击率这个数据应该怎么算？</b></p>
+                <p>很多人就想到一个方法——“尝试投放一下”</p>
+                <p>那么“尝试投放一下”这种方法是不是行得通呢？</p>
+                <p>答案是行不通，为什么行不通呢？我们接着往下看——</p>
+                <p>我们依然通过一个简单的例子来说明：</p>
+                <p>假如现在有四个广告主——分别是卖高跟鞋、卖买西装、卖布娃娃和卖游戏机的，他们的出价都是一块钱一个点击。</p>
+                <p>假如整个平台上有4000个用户，</p>
+                <p>
+                    按照刚刚的说法，我们开始不知道每一个广告主的点击率，所以我们可以试投一下，比如说每个广告主我们都是投100个，结果我们发现投放之后，它们每一个的点击率都是25%，一模一样，这时候排序就变得很困难。</p>
+                <p>于是，我们只能公平的随机去进行投放，这个时候我们的点击数是4000，乘以点击率25%等于1000，我们的总收益是1000个，点击乘以一块钱，总的就是1000块钱。</p>
+                <p><b>但是，如果我们知道这4000个用户的特征，我们就不会这样去预估点击率。</b></p>
+                <p>那么真相是什么？</p>
+                <p>真相就是这4000个用户，<b>其实可以根据年龄和性别分成四类——分别是成熟男人、成熟女人、小男孩和小女孩</b>，每一个分类都是1000个，他们每个人对自己喜欢的物品的点击率是100%，不喜欢的物品的点击率是0%，
+                </p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab8d6a2284513fad3cbf.png"/></p>
+                <p>比如说小男孩一定会点游戏机，一定不会点其他的，而成熟女人一定会点高跟鞋，也一定不会点其他的商品。</p>
+                <p>所以这时候我们正确的预估应该是——当一个小男孩来访问的时候，我们就能精确的预估到他对游戏机这个广告的点击率是100%，而其他人的点击率这时候是0%，</p>
+                <p>这样预估的话，所有人的点击率就都是100%，这时候点击数就会变成4000，整个收益也会变成4000，比刚刚的1000翻四倍。</p>
+                <p>上面的例子告诉我们，<b>我们要根据广告特征和用户特征来实时的预估点击率。</b></p>
+                <p><b>那么点击率需要哪些特征来预估，或者说点击率都和什么因素相关？</b></p>
+                <p>主要有三个方面会影响点击率——广告侧、用户侧和平台侧。</p>
+                <p>广告侧很容易理解广告主的行业广告，文案、广告、图片和广告的形式都会影响点击率。</p>
+                <p>而用户侧我们刚刚说的年龄、性别、地域、手机兴趣以及它的使用环境等等。</p>
+                <p>然后平台侧就是平台的频次控制时间、竞价策略和流量分配策略都会影响点击率。</p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab8d83d284523fe93384.png"/></p>
+                <p>点击率的预估其实是一个非常复杂的过程，它是互联网广告最核心的技术之一。</p>
+                <p><b>我们可以把点击率预估简化成两个步骤，第一步叫特征工程，第二步叫模型训练。</b></p>
+                <p>特征工程就是找到很多跟点击率相关的特征，通过模型训练我们就能够得出特定的点击率。</p>
+                <p>从这个意义上说，点击率预估其实是一个黑盒子，输入很多特征就能实时的输出预估的点击率。</p>
+                <p>点击率的预估应用非常的广泛，我们今天熟悉的今日头条、抖音的推荐系统的核心技术也是点击率的预估，平时咱们观察到的是——看过什么就给我推荐什么，非常的精准。</p>
+                <p><b>这背后其实是把所有可能投放给你的内容的点击率都进行一次预估，然后把点击率最高的推送给你</b>。</p>
+                <p>广告比推荐排序会多一个步骤，推荐只需要知道谁排在前面就OK，而广告需要知道具体的数值，因为它需要和出价一起来综合排序。</p>
+                <p>理解点击率预估对广告排序的意义，我们就能够破除一个按效果付费的理解误区：<img class="ke_img"
+                                                            src="https://xqimg.imedao.com/172bab8de02283e73fc851c4.png"/>
+                </p>
+                <p>有人说按点击和成交去进行付费简直太爽，不点不要钱简直没风险！</p>
+                <p>那我能不能我出一分钱一个点击，同时我还没有时间去好好做广告素材，然后我还要点击一天给我来一百万个？</p>
+                <p>事实上是不会有这样的好事，你出一分钱一个点击，广告平台如果产生点击，它的确只扣你一分钱，不产生点击的确也不会扣你的钱。</p>
+                <p>但是最可能的结果就是你出价太低或者你的点击率太低，你被排在后面根本投放不出去，<b>所以的确没有风险，但同样也没有收益。</b></p>
+                <p>OK，对这一小节做一个总结：如何通过竞价来提升广告投放的效率，按效果付费，的确是一个对广告组友好的计费方式，但是他也是一个公平的计费方式，想要获得更多的点击只有两个办法：</p>
+                <p>第一，提升出价，当然出价通常要考虑到自己的承受范围；</p>
+                <p>第二，我们提升我们的点击率和转化率，不断的优化自己的广告素材广告定向和广告投放的数据。</p>
+                <p><b>问题三：这个广告是如何被投放出来的？</b></p>
+                <p>OK，<b>我们来看第三个问题，这个广告是如何被投放出来的</b>，它对应的关键词叫自动化。学习完这一小节，我们就能知道如何利用自动化的工具来提升广告投放的效率。</p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab8e05f283e83fe717c8.png"/></p>
+                <p>广告，其实从一开始就很注重实验，在奥格威的时代，广告实验是这样进行的——在同一份报纸，同一个版面，同一个日期去刊登不同文案的广告，然后去观察两份文案带来的免费样品索取量的差异。</p>
+                <p>那么在今天，广告的实验是怎么做的？</p>
+                <p>Facebook开发一个创意实验系统，输入不同的图片，普通的标题和不同的描述，系统就会自动的生成多个广告创意去进行广告实验。</p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab8e4a8284643fc5ad7f.png"/></p>
+                <p>根据谷歌的首席经济学家范里安说，仅仅在2016年，谷歌广告系统就进行超过12000次实验。</p>
+                <p>今日头条开发一个广告创作机器人——妙笔，输入行业和关键词，立马就能够创造出海量的广告。</p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab8e91c2869b3fe7c6fe.png"/></p>
+                <p>我有一天试一下，我选择游戏行业，输入二次元这个关键词，一瞬间一大批的文案就创作完成。</p>
+                <p>
+                    而且智能优化出价让很多广告优化师都失业，只要广告组确定自己的转化成本广告，平台就会自动智能的出价，然后让最容易产生转化的用户看到我们的广告。今天Facebook、谷歌和腾讯都在推广这种智能的出价方式，</p>
+                <p>OK，对这一小节做一个总结：</p>
+                <p>如何利用自动化的工具来提升广告投放的效率。档案室我们不要和机器去对抗，我们需要和机器来合作，我们需要充分利用现有的这些工具来帮助我们进行广告投放。</p>
+                <p><b>问题四：</b><b>为什么刘涛会出现在朋友圈的广告中？</b></p>
+                <p><b>我们来聊一下第四个问题，为什么刘涛会出现在朋友圈的广告中</b>，它对应的关键词叫原生广告，理解原生广告的含义我们就能知道如何在互联网时代去制作受欢迎的广告内容。</p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab8eef1284543fd74e57.png"/></p>
+                <p>大家可以看到课程中的两张图——左边是一张炫酷的图片，右边是一个简单的文字链，我们来猜一下哪一个广告点击率更高？</p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab8f2cc285f33fea45a1.png"/></p>
+                <p>答案是右边的文字链。</p>
+                <p>那么为什么一个简单的文字链点击率反而更高，是<b>因为那个文字链看起来像一个功能，而不是一个广告，所以它的点击率更高。</b></p>
+                <p><b>这就是原生广告的威力。</b></p>
+                <p>那么什么是原生广告，我们通过下面的例子直观解一下——</p>
+                <p>和传统的电视广告不同，《奇葩说》的花式口播广告其实就是一种原生广告，比如说肯德基的“一人吃鸡、全家光荣”</p>
+                <p>所谓原生广告，就是让广告和内容看起来差不多。</p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab8f5e0283ed3fd643d7.png"/></p>
+                <p>原生广告的分成两种：形式原生和意图原生，所谓形式原生，就是用广告和内容或者功能长得一样。</p>
+                <p>我们来看一些形形色色的原生广告——在知乎广告是一个问题、在抖音广告是一个竖屏的视频、在美颜相机广告是一个图标、在QQ附近的人广告是一个头像、在小游戏跳一跳广告是一个小盒子。</p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab8f9fe281763fefe77e.png"/></p>
+                <p>接下来我们看一下什么是意图原生，这是天猫在双11的时候在抖音投放的一个广告。</p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab8fef5284cf3fec3be7.png"/></p>
+                <p>我们看到这个广告没有请明星，整个场景也非常的生活化，就像我们每天刷的抖音的视频，这其实就是一种意图原生的广告。</p>
+                <p>所谓意图原生，就是用广告的调性以及意图和普通内容一样。</p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab90286286083fe0e705.png"/></p>
+                <p>
+                    我们看到课程中的这张图，这是美图为ud定制的一个肤色检测广告，拍一张照片就能给你推荐适合你肤色的粉底，他把广告和功能进行一个深度的结合，让用户在功能中就能体会品牌的内涵，这也是一种意图原生的广告，</p>
+                <p>那么你可能会问，<b>那有没有一些形式原生和意图原生都做得比较好的广告？</b></p>
+                <p>答案是有，搜索广告就是一个典型，首先广告和搜索结果长得很像，然后广告也和搜索关键词息息相关。</p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab906dc284553fead6fc.png"/></p>
+                <p>好，我们对这一小节做一个总结：</p>
+                <p>如何在互联网时代去制作受欢迎的广告内容，答案是一个中心，两个基本点——</p>
+                <p><b>一个中心就是用广告看起来不像广告，两个基本点就是在形式上让广告看起来和内容一致，在内容上尽可能提供符合调性和意图的创意。</b></p>
+                <p><b>问题五：为什么微信每天只会看到两三条广告？</b></p>
+                <p>OK，<b>我们看第五个问题，为什么微信每天只会看到两条广告</b>，但是微博头条每天可以看到很多条，它对应的关键词叫广告频次。</p>
+                <p>理解频次对广告的影响，我们就能知道如何合理的控制广告投放的频次。</p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab90bcc2847f3fcc31c2.png"/></p>
+                <p>我们从一个抱怨开始说起，陌陌的总裁王力，他的昵称叫王老板，在微博上公开的抱怨，他想永远的屏蔽掉一个直发类的广告，每天都给他推。</p>
+                <p>那么这个广告为什么会频繁的曝光给同一个人？</p>
+                <p>这就涉及到广告投放的频次问题，<b>频次深刻地影响着广告的三方平衡</b>，因为广告是一个需要考虑三方利益的系统，这三方分别是广告平台、广告主和用户。</p>
+                <p><b>对于平台而言，频次意味着库存频次严格，库存就少，频次宽松，库存较多；</b></p>
+                <p><b>对于广告主而言，频次会影响转化率和点击率，一天看一次和一天看五次，点击率和转化率肯定不一样。</b></p>
+                <p><b>对于用户而言，频次意味着核心的用户体验，如果广告太多，用户就走。</b></p>
+                <p>我们看一下从平台的角度，哪些因素会影响广告的频次，</p>
+                <p>首先是场景，不同的场景会影响广告的频次，比如说我们刚刚说的微信朋友圈每天两条，而头条可以做到五条内容，就差一条广告。</p>
+                <p>有人进行对比，然后得出微信广告的库存还有很大的增长空间，这个说法其实是不准确的，因为朋友圈是一个私密的空间，我们看到的内容都是我们的朋友发的；</p>
+                <p>那头条是一个公开的平台，我们看到的内容本身就是陌生的，所以广告多一点也无所谓，<b>从这个意义上说，朋友圈广告永远也不可能像头条那么多。</b></p>
+                <p>第二个影响频次的因素就是——内容的吸引程度，这个很容易理解，优酷的热播剧可以贴120秒的广告，但是美拍我们就不能在他前面去贴钱贴片。</p>
+                <p>影响广告频次的还有产品的发展阶段。在产品发展早期，为用户体验广告可能会少一些，而后期需要商业化的时候，广告就会多一些。</p>
+                <p>用户的行为特征也会影响广告的频次，比如说有一些App，头条、微博都会根据用户的活跃度来动态的调整广告的频次。</p>
+                <p>我们来看一个频次的案例，这大概是今日头条两到三年前的一个频次策略。</p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab90fb5286a03fe607e5.png"/></p>
+                <p>它包含三个层面，广告主层面，广告创意层面和负反馈层面。</p>
+                <p>广告主是指同一个广告组，同一个广告计划在12个小时之内只出现一次。</p>
+                <p>而广告创意的部分是同一个广告创意，同一个广告的落地页，同一个应用、同一篇文章在12小时之内只出现一次。</p>
+                <p>负反馈，就是用户点负反馈之后同一个账户同一个应用和同一个落地页在两周之内不再展示给用户。</p>
+                <p>OK，我们在从广告主的角度来聊一聊频次对于广告主而言意味着印象加成。</p>
+                <p>很多人的一个疑惑就是——<b>为什么像可口可乐这样家喻户晓的品牌还要继续的打广告</b>，难道可口可乐不打广告我们就不喝了嘛？</p>
+                <p>事实上，还真有可能是这样，我们来看一个天然的案例，健力宝的故事在90年代，健力宝对于中国人而言是一个家喻户晓的品牌，1997年它的销售超过50亿，比可口可乐和百事可乐总和还要多。</p>
+                <p>后来，健力宝衰落，当然衰落的原因有很多，我们不能简单的把它归因于不打广告，但是他给我们提供一个天然的案例，<b>那就是如果不打广告，消费者就会忘记它。</b></p>
+                <p>今天健力宝并没有倒闭，它还在超市卖，但由于它很多年不打广告，我们今天的消费者几乎已经把他忘记，这背后其实是遗忘曲线在起作用。</p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab913c62846b3fbd45a6.png"/></p>
+                <p>德国的心理学家艾宾浩斯的遗忘曲线告诉我们，任何一段记忆需要在还没有忘记之前反复加强。</p>
+                <p>品牌在投放广告的时候非常关心的一个指标就是覆盖频次。</p>
+                <p>通常一个广告会在电视上播放四周，然后停止两周，在互联网上投放的时候也会对同一个用户覆盖至少三次以上，目的就是让你在忘记之前反复加强印象，</p>
+                <p>OK，我们对这一小节做一个总结，如何合理的控制广告投放的频次。</p>
+                <p><b>对于效果广告而言，我们需要不断的实验控制好广告的频次来优化整个转化率。</b></p>
+                <p><b>而对于品牌广告而言，我们需要遵循遗忘曲线</b>，在短时间内多次去触达来占领用户的心智。</p>
+                <p><b>问题六：广告下方的点赞和评论到底意味着什么？</b></p>
+                <p>我们接下来看<b>最后一个问题，广告下方的点赞和评论到底意味着什么？</b>它对应的关键词叫实时互动。</p>
+                <p>解释这个问题我们就知道如何得在互联网时代更好地和广告受众进行有效的互动。</p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab917dc284d03fe219b7.png"/></p>
+                <p>实时互动是互联网广告和传统广告的一个重要区别——</p>
+                <p>传统的报纸，电视这些广告其实是没办法去进行互动的互动，对于消费者而言，可以非常明确的表达自己对广告的态度。</p>
+                <p>互动，对于商家而言，可以在多个维度上去收集受众对广告的具体反馈。</p>
+                <p>我们一起来看一个深层次的互动案例，负反馈，这是今日头条负反馈的界面，点击一条光大银行信用卡广告旁边就会出现如下界面。</p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab91bca286a23fe9b2d6.png"/></p>
+                <p>首先，它提供很多个负反馈的选项，比如说不感兴趣垃圾内容和屏蔽选项，</p>
+                <p>
+                    其次，它提供多个维度的精准的屏蔽选项，由广告处一级分类和二级分类，我们仔细看会发现，光大银行，信用卡，银行类金融类这三个选项其实是有层次的，通过这种方式，它就能够实时的知道受众真实的广告需求和广告偏好。</p>
+                <p>我们再来看一个深层次的互动案例，YouTube的可跳过广告按钮，这是一个非常经典的案例。</p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab91f54284803fed3120.png"/>YouTube的贴片广告在五秒钟之后就可以跳过，那么这个跳过按钮，让广告主增加一个维度来衡量自己广告的质量，比如说是在第七秒跳过，还是在第23秒跳过，就非常准确的反映广告的吸引程度。
+                </p>
+                <p><b>这个小小的跳过按钮，既可以是负反馈，比如说立马跳过，也可以是正反馈，比如说坚持看完。</b>这些指标都会优化广告，提供非常广阔的空间。</p>
+                <p>关于这个案例，大家可以去听逻辑思维的626期，罗振宇老师把卫夕的一篇文章做成了一期节目。</p>
+                <p>OK，我们一起对这个小节做一个总结，<b>如何更好的在互联网时代和广告受众去进行有效的互动，答案是两点：</b></p>
+                <p>第一，分析互动，第二，反馈互动。</p>
+                <p>所谓分析互动，就是充分利用各类互动的指标，及时调整广告，去提升整个广告的转化率；所谓反馈互动就是如果受众对你进行互动，你要立马进行回应用你的广告变得鲜活起来。</p>
+                <p>OK，我们回顾一下，我们要通过六个问题代表的六个关键词，梳理互联网广告的微观逻辑，<b>这六个关键词分别是数据、竞价、自动化、原生广告、频次控制和互动性。</b></p>
+                <p>广告有很多定义，我在这里以我的理解给广告下一个自己的定义，那就是——<b>在合适的时间把合适的广告内容以合适的方式高效的投放给合适的人。</b></p>
+                <p>我们刚刚聊的这几个关键词就正好和这个定义非常的契合——</p>
+                <p>频次控制能让我们把握合适的时间；通过原生广告，我们能创作出合适的内容；竞价是一种合适的方式；而自动化能够实现高效率；数据能够帮助我们找到合适的人；</p>
+                <p>我们会发现其实少一个关键词，所以我在定义中增加一点，就是根据反馈不断的重复，对应互动性这个关键词。</p>
+                <p><img class="ke_img" src="https://xqimg.imedao.com/172bab922a9286a33fedc93c.png"/></p>
+                <p>互联网广告投放是一个综合的过程，想要获得很高的回报，需要我们把以上的每一个环节都做到极致。</p>
+                <p>最后，我们总结一下：</p>
+                <p>在宏观上，互联网广告已经替代传统广告成为主流，而这背后的基本逻辑是用户时间的转移。</p>
+                <p>而在微观上，互联网广告已经从技术上和产品上彻底重塑整个广告运行的逻辑。</p>
+                <p></p>
+                <p>——End——</p>
+                <p><b>作者简介：卫夕，科技专栏作者，专写长文，专注剖析互联网及社会科学的底层逻辑；不关注这个账号，你都不知道你会错过神马！</b></p><!-- 多图展示--><!-- 查看对话-->
+                <!-- 红包--></div><!-- 转发引用-->
+            <status-retweeted></status-retweeted>
+        </article>
+        <div class="article__widget"><!--打赏-->
+            <widget-article-reward></widget-article-reward>
+        </div>
+        <div class="article__meta">
+            <widget-article-meta></widget-article-meta>
+        </div>
+        <widget-article-comment></widget-article-comment>
+    </div>
+    <page-footer :show="0"></page-footer>
+    <div class="modals dimmer">
+        <modals></modals>
+        <confirms></confirms>
+        <alert></alert>
+    </div>
+    <div class="toast"><i class="iconfont">&#xe630;</i><i class="iconfont error-icon">&#xe631;</i><i
+            class="iconfont warn-icon">&#xe632;</i><i class="iconfont loading-icon">&#xe64a;</i><span></span></div>
+    <top :target="'.article__container'" :reference="'.home__col--rt'"></top>
+    <upgrade-tip></upgrade-tip>
+    <widget-download-app></widget-download-app>
+</div>
+<script src="//assets.imedao.com/ugc/js/jquery-3-8f108df7c1.1.1.js" rel="preload" as="script"></script>
+<script src="//assets.imedao.com/ugc/js/polyfill-7-2b7aeab2bb.4.4.js" rel="preload" as="script"></script>
+<script src="//assets.imedao.com/ugc/js/raven-28e71e6c19.min.js"></script>
+<script>Raven.config('https://c289498b3c4a41d295f532d892124f8f@tracking.xueqiu.com/10').install()
+Raven.setUserContext({
+  id: SNOWMAN_USER.id || -1,
+  username: SNOWMAN_USER.screen_name || '',
+  ip_address: '27.190.144.241'
+});
+
+</script>
+<script src="//assets.imedao.com/ugc/js/medium-editor-7cb4ebf4cb.js"></script>
+<script src="//assets.imedao.com/ugc/js/page-b54af19bd8.js"></script>
+<script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?1db88642e346389874251b5a1eded6e3";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+
+</script>
+<script src="//assets.imedao.com/ugc/js/apm-4-df4081db31.1.js"></script>
+<script>if(window && window.elasticApm){
+  var apm = window.elasticApm.init({
+    serviceName: 'snowman-web',
+    serverUrl: 'https://open.xueqiu.com/es-apm',
+    transactionSampleRate: 0.1,
+  })
+  var apmTransactionName = location.pathname;
+
+  if (apmTransactionName.match(/^\/S\//i)) {
+    //- 个股页
+    apmTransactionName = 'stock pages';
+  } else if (apmTransactionName.match(/^\/$/)){
+    //- 首页
+    apmTransactionName = 'home page';
+  } else if (apmTransactionName.match(/^\/[0-9]{10}\/[0-9]{8}/)) {
+    //- 文章页
+    apmTransactionName = 'article pages';
+  } else if (apmTransactionName.match(/^\/(u\/|[0-9]{10})/)) {
+    //- 个人页
+    apmTransactionName = 'profile pages';
+  } else {
+    //- 其他页面
+    apmTransactionName = 'other pages';
+  }
+  apm.setInitialPageLoadName(apmTransactionName);
+  if (window.SNOWMAN_LOGIN) {
+    apm.setUserContext({
+      id: window.SNOWMAN_USER.id,
+      username: window.SNOWMAN_USER.screen_name
+    })
+  }
+}
+
+</script>
+<script>window.analytics_config = {
+	page: 47,
+	type: 1,
+	data: {
+		status_id: "151658213",
+		referurl: document.referrer,
+		ua: window.navigator.userAgent,
+		url: window.location.href
+	}
+}
+
+</script>
+<script>window.SNOWMAN_STATUS = {"id":151658213,"user_id":1803026560,"source":"雪球","title":"万字长文——互联网广告到底是如何运行的？","created_at":1592270597000,"retweet_count":414,"reply_count":178,"fav_count":843,"truncated":false,"commentId":0,"retweet_status_id":0,"symbol_id":null,"description":"自互联网诞生之后，广告这个历史悠久的行业就被永远地改变。 卫夕一直致力于普及互联网广告的基本逻辑，始终认为这是一个对行业意义的事，为此我做了一个40分钟的视频分享给大家—— 卫夕希望这个科普课程视频可以达到两个目标——第一，即便是没有从事过广告的小白用户也能看懂，明白其中的逻辑...","type":"3","source_link":null,"edited_at":null,"user":{"subscribeable":false,"common_count":0,"remark":null,"recommend_reason":null,"domain":null,"name":null,"location":null,"id":1803026560,"type":"1","description":"公众号“卫夕指北”作者，写一些有趣、有料的互联网文章","url":null,"allow_all_stock":false,"verified_type":1,"stock_status_count":null,"province":"北京","city":"海淀区","gender":"m","blog_description":null,"stocks_count":0,"recommend":null,"status":0,"screen_name":"卫夕","following":false,"profile":"/1803026560","verified":true,"friends_count":67,"followers_count":5921,"st_color":"1","follow_me":false,"status_count":69,"verified_description":"互联网行业研究达人","blocking":false,"donate_count":0,"last_status_id":155097767,"intro":null,"step":"null","verified_infos":[{"data":null,"verified_type":"3","verified_desc":"互联网行业研究达人"},{"data":null,"verified_type":"5","verified_desc":"用户已完成实名身份认证"}],"group_ids":null,"verified_realname":false,"name_pinyin":null,"screenname_pinyin":null,"photo_domain":"//xavatar.imedao.com/","profile_image_url":"community/20196/1564220180075-1564220195841.jpg,community/20196/1564220180075-1564220195841.jpg!180x180.png,community/20196/1564220180075-1564220195841.jpg!50x50.png,community/20196/1564220180075-1564220195841.jpg!30x30.png","user_id":1803026560},"retweeted_status":null,"answers":null,"rqtype":null,"rqid":0,"target":"/1803026560/151658213","fragment":null,"blocked":false,"blocking":false,"topic_pic":null,"topic_symbol":null,"topic_title":null,"topic_desc":null,"donate_count":0,"donate_snowcoin":0,"liked":false,"view_count":0,"weixin_retweet_count":0,"mark":0,"card":null,"favorited":false,"favorited_created_at":null,"offer":null,"score":null,"topic_pic_thumbnail_small":null,"topic_pic_thumbnail":null,"topic_pic_headOrPad":null,"tagsForWeb":";","stockCorrelation":["GOOG","FB","BABA","09988","WB","00700"],"timeBefore":"06-16 09:23","longTextForIOS":true,"rawTitle":"万字长文——互联网广告到底是如何运行的？","canEdit":true,"reward":true,"tagStr":"","firstImg":"https://xqimg.imedao.com/172bab87b09284c83fddde60.png","expend":true,"meta_keywords":"{\"stockCorrelation\":\"GOOG_FB_BABA_09988_WB_00700\",\"tag\":\"港股大蓝筹全线大涨\"}","paid_mention":null,"reward_count":24,"reward_amount":27225,"reward_user_count":24,"talk_count":0,"like_count":259,"quote_cards":null,"promotion_pic":null,"promotion_url":null,"promotion_id":0,"mark_desc":null,"pic_sizes":[{"width":765,"height":428},{"width":766,"height":430},{"width":761,"height":424},{"width":761,"height":422},{"width":768,"height":428},{"width":763,"height":429},{"width":763,"height":425},{"width":761,"height":423},{"width":749,"height":410},{"width":757,"height":424},{"width":757,"height":415},{"width":756,"height":424},{"width":934,"height":516},{"width":922,"height":498},{"width":926,"height":491},{"width":934,"height":521},{"width":925,"height":514},{"width":932,"height":521},{"width":930,"height":469},{"width":923,"height":514},{"width":926,"height":515},{"width":914,"height":503},{"width":930,"height":517},{"width":929,"height":518},{"width":932,"height":517},{"width":918,"height":514},{"width":928,"height":517},{"width":919,"height":512},{"width":923,"height":502},{"width":923,"height":506},{"width":920,"height":507},{"width":922,"height":502},{"width":912,"height":505},{"width":923,"height":511},{"width":919,"height":510},{"width":921,"height":497},{"width":924,"height":510},{"width":913,"height":498},{"width":914,"height":491},{"width":923,"height":509},{"width":928,"height":516},{"width":912,"height":499},{"width":911,"height":504}],"cover_pic_size":null,"order_id":0,"tags":[],"status_industry":null,"excellent_comments":[],"notice_tag":null,"common_emotion":null,"current_stock_price":null,"new_card":null,"source_feed":false,"editable":true,"like_config":null,"reply_user_images":null,"reply_user_count":0,"is_private":false,"is_no_archive":false,"is_original_declare":false,"mp_not_show_status":false,"forbidden_comment":false,"text":"<p>自互联网诞生之后，广告这个历史悠久的行业就被永远地改变。</p> <p>卫夕一直致力于普及互联网广告的基本逻辑，始终认为这是一个对行业意义的事，<b>为此我做了一个40分钟的视频分享给大家——</b></p> <p>卫夕希望这个科普课程视频可以达到两个目标——<b>第一，即便是没有从事过广告的小白用户也能看懂，明白其中的逻辑。第二，即便是行业内的资深人士也能有启发和收获</b>；</p> <p>要同时完成这个目标并不容易，欢迎大家留言，不喜欢看视频版的也可以直接看下边的文字版！</p> <p><a   href=\"https://v.qq.com/iframe/preview.html?width=500&height=375&auto=0&vid=l3079003l9i\" rel=\"nofollow\"  title=\"https://v.qq.com/iframe/preview.html?width=500&height=375&auto=0&vid=l3079003l9i\" target=\"_blank\" class=\"status-link\">网页链接</a></p> <p>以下为文字版全文——</p> <p>你好，欢迎来到我的讲座，我是卫夕。</p> <p>是一名广告专栏作者，同时也是一名广告产品经理，先后在新浪微博和美图公司设计竞价广告系统。</p> <p>今天就和大家一起来聊一聊互联网广告的基本逻辑。</p> <p>“它无处不在，你无处可逃。”</p> <p>这是朋友圈广告上线时候的一句宣传语，的确，广告已经成为我们生活的一部分，一提起广告，很多人的一致反馈就是——<b>“不要和我聊广告，我讨厌广告！”</b></p> <p>但我要说，广告有着极其重要的意义。</p> <p>你可能会说你是做广告的，当然要说广告有意义，我说的这个意义不仅仅是对广告主，对广告媒体有意义，而是对于我们每一个人而言，广告也有着重要的意义。</p> <p>那么对于个人广告的意义到底是什么？</p> <p>广告第一个被忽视的意义就是它可以降低商品的价格。</p> <p>你可能会疑惑，那像大众汽车每年花66亿美元做广告、可口可乐每年花50亿美元，宝洁82亿、联合利华80亿欧元，这些广告费从哪里来，那他不还是我们消费者来买单吗？</p> <p>他要不打广告，我买车肯定要便宜不少，但是真的是这样吗？</p> <p>我们来看两个案例——</p> <p>第一个例子，在京东上每年花50亿美元打广告的可口可乐的价格是一箱59.9。</p> <p>而同样的规格同样是500ml，24瓶，从来不打广告，以至于你可能都没有听过的崂山可乐的价格是每箱68。</p> <p>你看花钱做广告，反而卖的更便宜。</p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab87b09284c83fddde60.png\" /></p> <p>我们再来看一个天然的例子：</p> <p>1972年的芝加哥大学的本哈姆教授发表一篇论文，在这篇论文中，他研究60年代美国不同州的眼镜的价格。</p> <p>结果发现在那些允许做广告的州眼镜的平均价格是26美元，而那些不允许做广告的州眼镜的平均价格是33美元。</p> <p>不打广告卖的更贵，花钱打广告反而更便宜，那么这到底是为什么？</p> <p>答案是广告带来的规模效应，通过广告，消费者更多生产的规模就能提升，而规模的提升又会反过来降低平均的价格。</p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab87e94283e23fa866e9.png\" /></p> <p>接下来我们看一下广告第二个被忽视的意义，就是它可以降低我们的选择成本。</p> <p>假如现在所有的洗发水都不打广告，这时候我们的超市会如何去选择去屑的洗发水？</p> <p>我们至少要阅读很多次的说明书，挑出带去屑功能的，我们可能还要比较它们的成分，产地，功效以及价格；</p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab88201284793fe64f01.png\" /></p> <p>比起现在走到超市直接拿走一瓶海飞丝，我们刚刚做的这一系列动作，就是我们的选择成本。</p> <p>那么广告第三个被忽视的意义就是他能够用我们免费的使用很多的产品——</p> <p>谷歌——免费的，微信——免费的，微博——也是免费的，有人说这些本来就是免费的。</p> <p>我们不要忘，没有广告模式的Windows和Photoshop是如此的昂贵：</p> <p>Windows的零售价是1088，Photoshop的惊喜价是3485。</p> <p>有人说我从来没为Windows付过费呀，那是因为你违法使用盗版，或者你买电脑的时候已经加载电脑售价里面。</p> <p>广告，甚至还降低硬件的价格，在美国，Kindle带广告的版本会比不带广告的版本便宜25美元。</p> <p>所以说广告意义重大。</p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab8854b286913fdbb748.png\" /></p> <p>而广告做一个行业在过去几十年发生的最重要的变化就是从传统广告到互联网广告的转变。</p> <p>但是对于互联网广告，我们可能还有很多的疑惑——</p> <p>比如微信朋友圈第一次投放的三个广告组分别是可口可乐，宝马，中博和vivo，有人就会问，凭什么我看到的是可口可乐，诶，我老公看到的是宝马，难道我老公是隐形的富豪？</p> <p>还有人会疑惑，不是说精准投放吗？为什么我一个男生还会在手机上看到护舒宝的广告？</p> <p>还有，为什么我白天在京东上看到一款相机，晚上刷今日头条的时候就看到这款相机的广告？</p> <p>以上三个问题反映我们对互联网广告的运作模式还不太解。</p> <p>不仅我们不知道，就连美国的参议员也不知道：</p> <p>在Facebook的CEO扎克伯格的国会听证会上，参议员哈奇就问这样一个问题——<b>“Facebook不是免费的吗？你们怎么赚钱？”</b></p> <p>这是一道送分题，所以扎克伯格很轻松的回答说——<b>“议员先生是这样，我们有广告。”</b></p> <p>广告是互联网的最大的商业模式，互联网广告他到底是如何运作的？它的基本逻辑是什么？了解这些基本逻辑对我们广告投放有什么意义？</p> <p>这就是我们今天要讨论的话题，我会从宏观和微观两个部分来剖析互联网广告最基本的运作逻辑。</p> <p>宏观部分</p> <p>我们首先来看宏观部分，我们从一个极其宏观的数字开始说起，广告占GDP的比重。</p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab88aa72845d3fdafe4b.png\" /></p> <p>首先我们来看美国的数据，1919年到2017年广告占美国GDP的比重基本保持不变，长期徘徊在2%到5%之间。</p> <p>广告占GDP的比重基本保持不变，并不是美国所独有的，中国其实也一样，只不过中国的占比比美国要低一些，只有0.88%，而作为对比中国的国防支出占比是1.3%。</p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab88e49285fc3fe04075.png\" /></p> <p>大家可以看到课程中的这张谷歌收入的增长趋势图，我们看到谷歌每年的增长率其实都超过20%，我们刚刚说广告占GDP的比重保持不变，而GDP的增长其实是比较缓慢的，比如说中国大概6%，美国大概是1%。</p> <p>那么像谷歌这些以广告为核心的互联网公司，每年高达20%的高速增长是怎么样实现的？</p> <p>有人说那因为谷歌是头部公司，他表现比较好吧，但事实上像美图这样的中部公司广告收入也在快速增长，甚至它的增速比谷歌还要快。</p> <p>那有人又会说，那是不是头部公司增长比较快，尾部的小媒体肯定就比较惨吧？</p> <p>事实上，像我的公众号“卫夕指北”之类的长尾媒体，今年的广告费也要比去年要多不少。</p> <p>那么问题就来了——广告的总盘子基本保持不变，或者说增长极其缓慢，而不管是大型的互联网公司还是常规的媒体广告收入都在快速增长，那么到底是谁在跌呢？</p> <p>答案是，传统广告在跌，他们都被互联网广告所取代了。</p> <p>不管是在中国还是在美国，互联网广告高歌猛进的同时，其实是传统广告不可避免的下滑。</p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab8952b2845f3fa33381.png\" /></p> <p>你可以看到课程中的这张全球广告市场的趋势图，2000年传统广告的份额几乎是百分之百，而到20年之后的今天，他的份额下降到50%，也就是说，全球广告有一半的份额都被互联网广告所取代。</p> <p>那接下来也会问——为什么传统广告变成互联网广告？</p> <p>答案其实也很简单，因为互联网占据大家的时间。</p> <p>我们来看一个有趣的数据变迁——互联网分析师玛丽米克尔每年会发布互联网的年度报告报告，从09年开始，每年都会有一页PPT专门来披露各类媒体的广告收入占比和用户时长占比。</p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab898c8284483fa6d44c.png\" /></p> <p>我们直接对比2009年到2018年的数据，纸媒从09年的26%下降到18年的7%，而互联网从09年的13%上升到18年的51%，而互联网也正好占据人们51%的时间。</p> <p>我们之所以说广告是互联网最大的商业模式，是因为世界上最赚钱的互联网公司，比如说谷歌，Facebook，阿里巴巴等等，他们几乎都是以广告为生。</p> <p>无论是在中国还是在美国，互联网广告市场基本上都被几大巨头所瓜分。</p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab89f292816f3fb20095.png\" /></p> <p>接下来的问题就是——为什么这些巨头的市场份额会如此之大？</p> <p>当然是巨头们占据大部分的用户时长，从课程的图片中我们可以看到——腾讯、字节跳动、阿里、百度占据中国互联网超过70%的用户时长。</p> <p>那么互联网广告和传统广告到底有什么区别？</p> <p>第一，互联网广告改变广告市场的结构；</p> <p>第二，互联网广告从技术上和产品上改变广告实现的逻辑。</p> <p>互联网给广告带来的一个重要转变就是广告主更加丰富。</p> <p>如果我问——央视一个月有多少个广告主？奥美一个月能服务多少个广告主？超级碗一届能播出多少个广告？答案是：非常的少。</p> <p>然后我们再来看Facebook一个月有多少个广告主？谷歌一年有多少个广告主？百度一个季度又有多少个广告主？</p> <p>这个答案会多得超出你的想象——</p> <p>Facebook根据他的财报，2017年有超过五百万个月活跃广告主；</p> <p>谷歌有多少它没有透露过，但是仅仅在2018年，谷歌就屏蔽掉72.3万个违规账户。</p> <p>百度根据它的财报，2018年q4的广告主有52.9万之多。</p> <p>然后我们再来看我们如果到央视去打一个广告，从开始到结束要多长时间，这肯定是一个非常漫长的过程，但是我们到快手，微博和抖音去投放一个广告需要多长时间？</p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab8a2ca284c93fe1379d.png\" /></p> <p>答案是一分钟，我们在手机上选择广告内容，广告定向，并且立即支付，很轻松就完成一次广告投放。</p> <p>那么为什么互联网时代的广告能够做到这样呢？</p> <p>微观部分</p> <p>接下来我们就进入广告逻辑的微观部分。</p> <p>很多人在投放互联网广告的时候都会面临着很多的疑惑——</p> <p>比如说互联网广告的投放真的是太复杂，有没有一些原则是需要遵循的？</p> <p>我应该从哪些方面来全面的提升广告投放的回报率？</p> <p>接下来我就通过一个案例引发的六个问题，和大家一起来聊一下互联网广告运行的微观逻辑，以及我们到底应该如何投放互联网广告。</p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab8a5a5286923fdc3edb.png\" /></p> <p>大家可以看到课程中的这张图，我们从一条普通的微信朋友圈广告说起，这是我在朋友圈收到一条刘涛给伊利做的广告。</p> <p>这样的广告我们每天都会看见，但是广告就像一座冰山，我们能看到的部分只是冰山水面以上的部分，<b>其实还有更多的部分隐藏在水面以下，它的背后其实是一个非常复杂的系统。</b></p> <p>OK，我们来看一下冰山底下到底有什么，我提出六个问题；</p> <p><b>第一，是微信会收集哪些信息来投放广告？</b></p> <p><b>第二，是为什么你看到的是这个广告而不是其他广告？</b></p> <p><b>第三，这个广告的投放和传统广告的投放有什么区别？</b></p> <p><b>第四，为什么头像是刘涛，这背后的意义到底是什么？</b></p> <p><b>第五，为什么微信我们每天只能看到两到三条广告，而微博、头条，每天我们可以看到更多？</b></p> <p><b>第六，广告下边的点赞和评论对广告而言到底又意味着什么？</b></p> <p>这六个问题其实是可以分成两类，前面三个是和技术相关，后面三个和产品相关，而每一个问题他都会对应一个关键词，这六个关键词分别是——<b>数据、竞价、自动化、原生广告、频次控制和互动性。</b></p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab8a83d284603fe3f1e4.png\" /></p> <p><b>问题一：微信会收集我哪些信息来投放广告？</b></p> <p>微信会收集我哪些信息来投放广告？它对应的关键词叫数据。</p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab8ab68286933fd7ad87.png\" /></p> <p>在广告界有一个叫哥德巴赫猜想，就是：</p> <p><b>我知道我的广告费有一半都被浪费掉，但就是不知道哪一半。</b></p> <p>这是一位零售大亨在70年代说的，它在本质上是在控诉广告的不精准，但是今天这个难题在一定程度上被解决了。</p> <p>互联网广告就像红娘，红娘连接的是男人和女人，而<b>广告一边是广告主的需求，一边是用户的特征，广告系统就把他们两边匹配起来。</b></p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab8afed283e43fdf8725.png\" /></p> <p>接下来我们说一下广告精准性的进化史——</p> <p>最开始我们是通过媒介定向，像比如说中央五套、比如说南方都市报；</p> <p>在互联网的门户时代，我们通过内容来定向，像比如说新浪网的各个频道；</p> <p>接着到搜索的时代，我们是通过意图来定向；</p> <p>最后到我们今天的社交媒体短视频的时代，我们是通过人群属性去进行广告定向。</p> <p>刚刚我们说微信会收集哪些信息来投放广告，这就涉及到微信广告的用户画像体系：</p> <p>由于腾讯有众多的产品矩阵，因此<b>他能从六个平台获取交叉的数据，从而去构建一个非常立体的，精准的用户画像。</b></p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab8b2e42844e3fe37581.png\" /></p> <p>这六个平台分别是：社交平台，比如说qq；微信游戏平台，比如说我们每天玩的手机游戏；广告平台，比如说腾讯的广点通，品牌广告，视频广告等等；还有媒体工具，比如说腾讯网，腾讯视频等等；还有基础平台和电商生活平台。</p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab8b76e2844a3fc4fa12.png\" /></p> <p>然后我们再来看一下阿里是如何挖掘广告数据的，<b>和大家的印象不同，阿里其实不仅仅只有电商和支付的数据</b>，通过收购高德地图、UC浏览器、优酷等等，阿里能够全方位的去构建一个完整的用户画像。</p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab8bb30286013fbf92d7.png\" /></p> <p>然后我们再来看一下字节跳动的广告定向，通过抖音、今日头条、西瓜、火山、懂车帝这些App，头条也能准确的知道用户的兴趣以及他相应的行为。</p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab8bf222844c3fdb0867.png\" /></p> <p>课程中的这张图是Facebook的广告定向后台，通过Facebook，Instagram，Whatsapp这些应用收集相应的数据，Facebook的广告系统的定向维度也非常的精准。</p> <p>当然数据和数据的重要性也是不一样的——</p> <p>我们来比较两类不同的数据，<b>在互联网的早期，以百度、淘宝为代表的产品主要解决的是有用的问题</b>，更多的是为大家Save time，就是节省时间，是满足已有的需求，是存量，这时候的数据重要性高，但是维度和量都比较少。</p> <p>而<b>今天以朋友圈，抖音为代表的产品，主要解决的是有趣的问题</b>，更多的是Kill time，就是杀你的时间，是挖掘大家的新需求，是增量，这时候数据的重要性没那么高，但是维度和总量都要多很多。</p> <p>数据，彻底改变了广告。</p> <p><b>在谷歌的广告信息页面，它会直接告诉你他收集你哪些信息来投放广告。</b></p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab8c2c3286993fe8e064.png\" /></p> <p>大家可以看到课程中的这张图，这是谷歌广告设置页面给我打的标签——</p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab8c5d2284503fce5275.png\" /></p> <p>我其实很少用谷歌的产品，偶尔用一下搜索，翻译和YouTube，但是谷歌神奇的地方在于，他给我打的标签有着极高的准确性，这些标签90%都是非常准确的数据，让广告的精准性发生巨大的变化。</p> <p>谷歌广告系统前核心成员郄小虎透露，<b>谷歌首页的第一条广告的点击率高达30%到40%</b>，也就是几乎有一半的人都会点谷歌的第一条广告，而作为对比在报纸时代一条广告有5%的人感兴趣，就是一个不起的成绩。</p> <p>下面，我们通过两个故事来直观理解一下广告系统的精准性。</p> <p>首先，是张一鸣早期创业的故事，头条的CEO张一鸣早年创业的时候公司需要大量用到Python那个时候，Python这种语言还不怎么流行，因此，招人就特别不容易。</p> <p>张一鸣没有去拉勾这些垂直的招聘网站上去打广告，那么他是怎么样做的？</p> <p><b>他选择去百度买和Python相关的关键词广告</b>，比如说Python里的一些函数，因为只有Python的工程师才会去搜这些关键词，结果这些关键词很冷门、很便宜，招聘的效果也很有效。</p> <p>然后我们再来看一位硅谷工程师的故事，硅谷有一位工程师想去一家叫Reddit的的网站工作，他能想到一个非常有意思的方法，他首先写一篇水平很高，关于怎么样改进这个网站推荐算法的文章。</p> <p>接着，他通过网站的CEO霍夫曼在Facebook的公开账号寻找到一些独特的广告定向，然后他通过Facebook的广告系统使用这些定向把自己的文章投放给197个人，在<b>这197个人中居然就精准的命中霍夫曼，而这次推广仅仅花他10.6美元</b>，最后他的文章被霍夫曼所认可，而他也被这个网站成功的录取。</p> <p>通过这两个故事，我们可以看到——<b>有了精准的数据广而告之就变成窄而告之。</b></p> <p>所以<b>从这个意义上讲，互联网广告其实更应该被称之为窄告。</b></p> <p>数据就是新时代的石油，所以Facebook，谷歌就是数字时代的标准石油，而腾讯阿里就是数字时代的中石油和中石化。</p> <p>OK，我们对这一小节做一个总结——<b>我们如何利用数据把广告投放给我们的目标用户？</b></p> <p><b>答案是充分的挖掘有价值的数据去进行广告投放</b>，它包括第一方数据，第二方数据和第三方数据。</p> <p>所谓第一方数据就是广告主自己的数据，比如说客户的邮箱，手机等等。</p> <p>第二方数据就是广告平台能够提供的数据，比如说我们上面说的阿里，腾讯的各个维度的数据。</p> <p>第三方数据就是第三方的数据公司提供的数据，比如说通过数据市场获取的数据。</p> <p><b>问题二：为什么给一个人展示的是这个广告，而不是其他广告？</b></p> <p>OK，我们来看<b>第二个问题——为什么给一个人展示的是这个广告，而不是其他广告</b>，它涉及的关键词叫竞价。</p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab8c8a6284623f8e44e7.png\" /></p> <p>我们通过一个极其简单的例子来理解竞价——</p> <p>一个篮子总共有三个红苹果和三个青苹果，这时候有两个人，第一个人只喜欢吃红苹果不喜欢吃青苹果，所以他愿意为一个红苹果出价一块钱，青苹果出价就是0，另一个人正好和他相反。</p> <p>这时候问题就来了——我们有两种售卖方式，第一种售卖方式：把整个篮子卖给其中的一个人，这时候我们的收入是三块钱。</p> <p>第二种方式，就是我们能够把红苹果和青苹果分开分别卖给他们，我们的收入就有三块加三块等于六块。</p> <p>如果我们把广告看成刚刚例子中的苹果，那么通过这个例子，我们可以得出以下的结论：</p> <p><b>第一，竞价的前提是人们对不同广告的价值判断其实是不一样的。</b></p> <p><b>第二，互联网的技术能够对不同的广告进行有效的区隔，</b></p> <p><b>第三，进价能够实现资源配置的最优化，</b></p> <p>OK，我们回到开始的这个问题，为什么你看到的是这个广告而不是其他广告？</p> <p>大家可以看到课程中的这个示意图，<b>假如广告系统通过数据识别到小明是一名生活在北京25岁，对健身感兴趣的男性。</b></p> <p><b>那么广告是怎么样投放给他的？</b></p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab8cdc8281713fe6028d.png\" /></p> <p><b>广告系统投放其实非常的复杂，但其中有两个关键的步骤</b>：</p> <p>第一步叫Target，就是匹配，这一步会在全体的广告库中找到符合小明这个定向的广告，比如说图中的A、C、E；</p> <p>第二步叫Rank，就是竞价排序，这一步，会挑出排在最前面的广告发给小明就是图中的C。</p> <p>这时候小明就看到了C这个广告。</p> <p>那么问题来了，广告的竞价排序是如何进行的？</p> <p><b>假如现在我们有两个广告主——Nike出价一块钱一个点击、阿迪出价两块钱一个点击，我们总共有100次曝光，我们应该给谁？</b></p> <p>很多人会直观的说，那当然得给阿迪，它出价高啊！</p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab8d16f284513fd1196d.png\" /></p> <p>但如果我们考虑到点击率，结果就会大不一样，假如耐克的点击率是5%，100次曝光就会产生五个点击一块钱一个点击收入是五块钱。</p> <p>而这时候如果阿迪的点击率是1%，那么100次曝光就会产生一个点击，两块钱一个点击收入是两块。</p> <p>所以两块对五块，我们应该给耐克，不是阿迪，因为它的综合收益更高。</p> <p>我们不要看这个案例非常简单，但他揭示按效果付费竞价广告的几个最重要的法则。</p> <p><b>第一，广告平台关心自己流量的总收益；</b></p> <p><b>第二，广告主通常按效果进行出价，比如说这次就是按单次的点击进行竞价；</b></p> <p><b>第三，广告平台需要把点击出价转化成它的收益去进行排序；</b></p> <p><b>第四，CTR也就是点击率就架起从点击到收益的一座桥梁，未排序去提供基础。</b></p> <p>所以，在竞价广告中，点击率就是一个极其关键的指标。</p> <p>那么问题就来了——点击率它是一个结果指标，就是我们投放完之后，我们可以去统计这个点击率，没有投放之前，我们其实是不知道的，而<b>每一次投放都需要排序。</b></p> <p><b>那么点击率这个数据应该怎么算？</b></p> <p>很多人就想到一个方法——“尝试投放一下”</p> <p>那么“尝试投放一下”这种方法是不是行得通呢？</p> <p>答案是行不通，为什么行不通呢？我们接着往下看——</p> <p>我们依然通过一个简单的例子来说明：</p> <p>假如现在有四个广告主——分别是卖高跟鞋、卖买西装、卖布娃娃和卖游戏机的，他们的出价都是一块钱一个点击。</p> <p>假如整个平台上有4000个用户，</p> <p>按照刚刚的说法，我们开始不知道每一个广告主的点击率，所以我们可以试投一下，比如说每个广告主我们都是投100个，结果我们发现投放之后，它们每一个的点击率都是25%，一模一样，这时候排序就变得很困难。</p> <p>于是，我们只能公平的随机去进行投放，这个时候我们的点击数是4000，乘以点击率25%等于1000，我们的总收益是1000个，点击乘以一块钱，总的就是1000块钱。</p> <p><b>但是，如果我们知道这4000个用户的特征，我们就不会这样去预估点击率。</b></p> <p>那么真相是什么？</p> <p>真相就是这4000个用户，<b>其实可以根据年龄和性别分成四类——分别是成熟男人、成熟女人、小男孩和小女孩</b>，每一个分类都是1000个，他们每个人对自己喜欢的物品的点击率是100%，不喜欢的物品的点击率是0%，</p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab8d6a2284513fad3cbf.png\" /></p> <p>比如说小男孩一定会点游戏机，一定不会点其他的，而成熟女人一定会点高跟鞋，也一定不会点其他的商品。</p> <p>所以这时候我们正确的预估应该是——当一个小男孩来访问的时候，我们就能精确的预估到他对游戏机这个广告的点击率是100%，而其他人的点击率这时候是0%，</p> <p>这样预估的话，所有人的点击率就都是100%，这时候点击数就会变成4000，整个收益也会变成4000，比刚刚的1000翻四倍。</p> <p>上面的例子告诉我们，<b>我们要根据广告特征和用户特征来实时的预估点击率。</b></p> <p><b>那么点击率需要哪些特征来预估，或者说点击率都和什么因素相关？</b></p> <p>主要有三个方面会影响点击率——广告侧、用户侧和平台侧。</p> <p>广告侧很容易理解广告主的行业广告，文案、广告、图片和广告的形式都会影响点击率。</p> <p>而用户侧我们刚刚说的年龄、性别、地域、手机兴趣以及它的使用环境等等。</p> <p>然后平台侧就是平台的频次控制时间、竞价策略和流量分配策略都会影响点击率。</p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab8d83d284523fe93384.png\" /></p> <p>点击率的预估其实是一个非常复杂的过程，它是互联网广告最核心的技术之一。</p> <p><b>我们可以把点击率预估简化成两个步骤，第一步叫特征工程，第二步叫模型训练。</b></p> <p>特征工程就是找到很多跟点击率相关的特征，通过模型训练我们就能够得出特定的点击率。</p> <p>从这个意义上说，点击率预估其实是一个黑盒子，输入很多特征就能实时的输出预估的点击率。</p> <p>点击率的预估应用非常的广泛，我们今天熟悉的今日头条、抖音的推荐系统的核心技术也是点击率的预估，平时咱们观察到的是——看过什么就给我推荐什么，非常的精准。</p> <p><b>这背后其实是把所有可能投放给你的内容的点击率都进行一次预估，然后把点击率最高的推送给你</b>。</p> <p>广告比推荐排序会多一个步骤，推荐只需要知道谁排在前面就OK，而广告需要知道具体的数值，因为它需要和出价一起来综合排序。</p> <p>理解点击率预估对广告排序的意义，我们就能够破除一个按效果付费的理解误区：<img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab8de02283e73fc851c4.png\" /></p> <p>有人说按点击和成交去进行付费简直太爽，不点不要钱简直没风险！</p> <p>那我能不能我出一分钱一个点击，同时我还没有时间去好好做广告素材，然后我还要点击一天给我来一百万个？</p> <p>事实上是不会有这样的好事，你出一分钱一个点击，广告平台如果产生点击，它的确只扣你一分钱，不产生点击的确也不会扣你的钱。</p> <p>但是最可能的结果就是你出价太低或者你的点击率太低，你被排在后面根本投放不出去，<b>所以的确没有风险，但同样也没有收益。</b></p> <p>OK，对这一小节做一个总结：如何通过竞价来提升广告投放的效率，按效果付费，的确是一个对广告组友好的计费方式，但是他也是一个公平的计费方式，想要获得更多的点击只有两个办法：</p> <p>第一，提升出价，当然出价通常要考虑到自己的承受范围；</p> <p>第二，我们提升我们的点击率和转化率，不断的优化自己的广告素材广告定向和广告投放的数据。</p> <p><b>问题三：这个广告是如何被投放出来的？</b></p> <p>OK，<b>我们来看第三个问题，这个广告是如何被投放出来的</b>，它对应的关键词叫自动化。学习完这一小节，我们就能知道如何利用自动化的工具来提升广告投放的效率。</p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab8e05f283e83fe717c8.png\" /></p> <p>广告，其实从一开始就很注重实验，在奥格威的时代，广告实验是这样进行的——在同一份报纸，同一个版面，同一个日期去刊登不同文案的广告，然后去观察两份文案带来的免费样品索取量的差异。</p> <p>那么在今天，广告的实验是怎么做的？</p> <p>Facebook开发一个创意实验系统，输入不同的图片，普通的标题和不同的描述，系统就会自动的生成多个广告创意去进行广告实验。</p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab8e4a8284643fc5ad7f.png\" /></p> <p>根据谷歌的首席经济学家范里安说，仅仅在2016年，谷歌广告系统就进行超过12000次实验。</p> <p>今日头条开发一个广告创作机器人——妙笔，输入行业和关键词，立马就能够创造出海量的广告。</p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab8e91c2869b3fe7c6fe.png\" /></p> <p>我有一天试一下，我选择游戏行业，输入二次元这个关键词，一瞬间一大批的文案就创作完成。</p> <p>而且智能优化出价让很多广告优化师都失业，只要广告组确定自己的转化成本广告，平台就会自动智能的出价，然后让最容易产生转化的用户看到我们的广告。今天Facebook、谷歌和腾讯都在推广这种智能的出价方式，</p> <p>OK，对这一小节做一个总结：</p> <p>如何利用自动化的工具来提升广告投放的效率。档案室我们不要和机器去对抗，我们需要和机器来合作，我们需要充分利用现有的这些工具来帮助我们进行广告投放。</p> <p><b>问题四：</b><b>为什么刘涛会出现在朋友圈的广告中？</b></p> <p><b>我们来聊一下第四个问题，为什么刘涛会出现在朋友圈的广告中</b>，它对应的关键词叫原生广告，理解原生广告的含义我们就能知道如何在互联网时代去制作受欢迎的广告内容。</p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab8eef1284543fd74e57.png\" /></p> <p>大家可以看到课程中的两张图——左边是一张炫酷的图片，右边是一个简单的文字链，我们来猜一下哪一个广告点击率更高？</p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab8f2cc285f33fea45a1.png\" /></p> <p>答案是右边的文字链。</p> <p>那么为什么一个简单的文字链点击率反而更高，是<b>因为那个文字链看起来像一个功能，而不是一个广告，所以它的点击率更高。</b></p> <p><b>这就是原生广告的威力。</b></p> <p>那么什么是原生广告，我们通过下面的例子直观解一下——</p> <p>和传统的电视广告不同，《奇葩说》的花式口播广告其实就是一种原生广告，比如说肯德基的“一人吃鸡、全家光荣”</p> <p>所谓原生广告，就是让广告和内容看起来差不多。</p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab8f5e0283ed3fd643d7.png\" /></p> <p>原生广告的分成两种：形式原生和意图原生，所谓形式原生，就是用广告和内容或者功能长得一样。</p> <p>我们来看一些形形色色的原生广告——在知乎广告是一个问题、在抖音广告是一个竖屏的视频、在美颜相机广告是一个图标、在QQ附近的人广告是一个头像、在小游戏跳一跳广告是一个小盒子。</p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab8f9fe281763fefe77e.png\" /></p> <p>接下来我们看一下什么是意图原生，这是天猫在双11的时候在抖音投放的一个广告。</p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab8fef5284cf3fec3be7.png\" /></p> <p>我们看到这个广告没有请明星，整个场景也非常的生活化，就像我们每天刷的抖音的视频，这其实就是一种意图原生的广告。</p> <p>所谓意图原生，就是用广告的调性以及意图和普通内容一样。</p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab90286286083fe0e705.png\" /></p> <p>我们看到课程中的这张图，这是美图为ud定制的一个肤色检测广告，拍一张照片就能给你推荐适合你肤色的粉底，他把广告和功能进行一个深度的结合，让用户在功能中就能体会品牌的内涵，这也是一种意图原生的广告，</p> <p>那么你可能会问，<b>那有没有一些形式原生和意图原生都做得比较好的广告？</b></p> <p>答案是有，搜索广告就是一个典型，首先广告和搜索结果长得很像，然后广告也和搜索关键词息息相关。</p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab906dc284553fead6fc.png\" /></p> <p>好，我们对这一小节做一个总结：</p> <p>如何在互联网时代去制作受欢迎的广告内容，答案是一个中心，两个基本点——</p> <p><b>一个中心就是用广告看起来不像广告，两个基本点就是在形式上让广告看起来和内容一致，在内容上尽可能提供符合调性和意图的创意。</b></p> <p><b>问题五：为什么微信每天只会看到两三条广告？</b></p> <p>OK，<b>我们看第五个问题，为什么微信每天只会看到两条广告</b>，但是微博头条每天可以看到很多条，它对应的关键词叫广告频次。</p> <p>理解频次对广告的影响，我们就能知道如何合理的控制广告投放的频次。</p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab90bcc2847f3fcc31c2.png\" /></p> <p>我们从一个抱怨开始说起，陌陌的总裁王力，他的昵称叫王老板，在微博上公开的抱怨，他想永远的屏蔽掉一个直发类的广告，每天都给他推。</p> <p>那么这个广告为什么会频繁的曝光给同一个人？</p> <p>这就涉及到广告投放的频次问题，<b>频次深刻地影响着广告的三方平衡</b>，因为广告是一个需要考虑三方利益的系统，这三方分别是广告平台、广告主和用户。</p> <p><b>对于平台而言，频次意味着库存频次严格，库存就少，频次宽松，库存较多；</b></p> <p><b>对于广告主而言，频次会影响转化率和点击率，一天看一次和一天看五次，点击率和转化率肯定不一样。</b></p> <p><b>对于用户而言，频次意味着核心的用户体验，如果广告太多，用户就走。</b></p> <p>我们看一下从平台的角度，哪些因素会影响广告的频次，</p> <p>首先是场景，不同的场景会影响广告的频次，比如说我们刚刚说的微信朋友圈每天两条，而头条可以做到五条内容，就差一条广告。</p> <p>有人进行对比，然后得出微信广告的库存还有很大的增长空间，这个说法其实是不准确的，因为朋友圈是一个私密的空间，我们看到的内容都是我们的朋友发的；</p> <p>那头条是一个公开的平台，我们看到的内容本身就是陌生的，所以广告多一点也无所谓，<b>从这个意义上说，朋友圈广告永远也不可能像头条那么多。</b></p> <p>第二个影响频次的因素就是——内容的吸引程度，这个很容易理解，优酷的热播剧可以贴120秒的广告，但是美拍我们就不能在他前面去贴钱贴片。</p> <p>影响广告频次的还有产品的发展阶段。在产品发展早期，为用户体验广告可能会少一些，而后期需要商业化的时候，广告就会多一些。</p> <p>用户的行为特征也会影响广告的频次，比如说有一些App，头条、微博都会根据用户的活跃度来动态的调整广告的频次。</p> <p>我们来看一个频次的案例，这大概是今日头条两到三年前的一个频次策略。</p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab90fb5286a03fe607e5.png\" /></p> <p>它包含三个层面，广告主层面，广告创意层面和负反馈层面。</p> <p>广告主是指同一个广告组，同一个广告计划在12个小时之内只出现一次。</p> <p>而广告创意的部分是同一个广告创意，同一个广告的落地页，同一个应用、同一篇文章在12小时之内只出现一次。</p> <p>负反馈，就是用户点负反馈之后同一个账户同一个应用和同一个落地页在两周之内不再展示给用户。</p> <p>OK，我们在从广告主的角度来聊一聊频次对于广告主而言意味着印象加成。</p> <p>很多人的一个疑惑就是——<b>为什么像可口可乐这样家喻户晓的品牌还要继续的打广告</b>，难道可口可乐不打广告我们就不喝了嘛？</p> <p>事实上，还真有可能是这样，我们来看一个天然的案例，健力宝的故事在90年代，健力宝对于中国人而言是一个家喻户晓的品牌，1997年它的销售超过50亿，比可口可乐和百事可乐总和还要多。</p> <p>后来，健力宝衰落，当然衰落的原因有很多，我们不能简单的把它归因于不打广告，但是他给我们提供一个天然的案例，<b>那就是如果不打广告，消费者就会忘记它。</b></p> <p>今天健力宝并没有倒闭，它还在超市卖，但由于它很多年不打广告，我们今天的消费者几乎已经把他忘记，这背后其实是遗忘曲线在起作用。</p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab913c62846b3fbd45a6.png\" /></p> <p>德国的心理学家艾宾浩斯的遗忘曲线告诉我们，任何一段记忆需要在还没有忘记之前反复加强。</p> <p>品牌在投放广告的时候非常关心的一个指标就是覆盖频次。</p> <p>通常一个广告会在电视上播放四周，然后停止两周，在互联网上投放的时候也会对同一个用户覆盖至少三次以上，目的就是让你在忘记之前反复加强印象，</p> <p>OK，我们对这一小节做一个总结，如何合理的控制广告投放的频次。</p> <p><b>对于效果广告而言，我们需要不断的实验控制好广告的频次来优化整个转化率。</b></p> <p><b>而对于品牌广告而言，我们需要遵循遗忘曲线</b>，在短时间内多次去触达来占领用户的心智。</p> <p><b>问题六：广告下方的点赞和评论到底意味着什么？</b></p> <p>我们接下来看<b>最后一个问题，广告下方的点赞和评论到底意味着什么？</b>它对应的关键词叫实时互动。</p> <p>解释这个问题我们就知道如何得在互联网时代更好地和广告受众进行有效的互动。</p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab917dc284d03fe219b7.png\" /></p> <p>实时互动是互联网广告和传统广告的一个重要区别——</p> <p>传统的报纸，电视这些广告其实是没办法去进行互动的互动，对于消费者而言，可以非常明确的表达自己对广告的态度。</p> <p>互动，对于商家而言，可以在多个维度上去收集受众对广告的具体反馈。</p> <p>我们一起来看一个深层次的互动案例，负反馈，这是今日头条负反馈的界面，点击一条光大银行信用卡广告旁边就会出现如下界面。</p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab91bca286a23fe9b2d6.png\" /></p> <p>首先，它提供很多个负反馈的选项，比如说不感兴趣垃圾内容和屏蔽选项，</p> <p>其次，它提供多个维度的精准的屏蔽选项，由广告处一级分类和二级分类，我们仔细看会发现，光大银行，信用卡，银行类金融类这三个选项其实是有层次的，通过这种方式，它就能够实时的知道受众真实的广告需求和广告偏好。</p> <p>我们再来看一个深层次的互动案例，YouTube的可跳过广告按钮，这是一个非常经典的案例。</p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab91f54284803fed3120.png\" />YouTube的贴片广告在五秒钟之后就可以跳过，那么这个跳过按钮，让广告主增加一个维度来衡量自己广告的质量，比如说是在第七秒跳过，还是在第23秒跳过，就非常准确的反映广告的吸引程度。</p> <p><b>这个小小的跳过按钮，既可以是负反馈，比如说立马跳过，也可以是正反馈，比如说坚持看完。</b>这些指标都会优化广告，提供非常广阔的空间。</p> <p>关于这个案例，大家可以去听逻辑思维的626期，罗振宇老师把卫夕的一篇文章做成了一期节目。</p> <p>OK，我们一起对这个小节做一个总结，<b>如何更好的在互联网时代和广告受众去进行有效的互动，答案是两点：</b></p> <p>第一，分析互动，第二，反馈互动。</p> <p>所谓分析互动，就是充分利用各类互动的指标，及时调整广告，去提升整个广告的转化率；所谓反馈互动就是如果受众对你进行互动，你要立马进行回应用你的广告变得鲜活起来。</p> <p>OK，我们回顾一下，我们要通过六个问题代表的六个关键词，梳理互联网广告的微观逻辑，<b>这六个关键词分别是数据、竞价、自动化、原生广告、频次控制和互动性。</b></p> <p>广告有很多定义，我在这里以我的理解给广告下一个自己的定义，那就是——<b>在合适的时间把合适的广告内容以合适的方式高效的投放给合适的人。</b></p> <p>我们刚刚聊的这几个关键词就正好和这个定义非常的契合——</p> <p>频次控制能让我们把握合适的时间；通过原生广告，我们能创作出合适的内容；竞价是一种合适的方式；而自动化能够实现高效率；数据能够帮助我们找到合适的人；</p> <p>我们会发现其实少一个关键词，所以我在定义中增加一点，就是根据反馈不断的重复，对应互动性这个关键词。</p> <p><img class=\"ke_img\" src=\"https://xqimg.imedao.com/172bab922a9286a33fedc93c.png\" /></p> <p>互联网广告投放是一个综合的过程，想要获得很高的回报，需要我们把以上的每一个环节都做到极致。</p> <p>最后，我们总结一下：</p> <p>在宏观上，互联网广告已经替代传统广告成为主流，而这背后的基本逻辑是用户时间的转移。</p> <p>而在微观上，互联网广告已经从技术上和产品上彻底重塑整个广告运行的逻辑。</p> <p></p> <p>——End——</p> <p><b>作者简介：卫夕，科技专栏作者，专写长文，专注剖析互联网及社会科学的底层逻辑；不关注这个账号，你都不知道你会错过神马！</b></p>","controversial":false,"pic":"https://xqimg.imedao.com/172bab87b09284c83fddde60.png,https://xqimg.imedao.com/172bab87e94283e23fa866e9.png,https://xqimg.imedao.com/172bab88201284793fe64f01.png,https://xqimg.imedao.com/172bab8854b286913fdbb748.png,https://xqimg.imedao.com/172bab88aa72845d3fdafe4b.png,https://xqimg.imedao.com/172bab88e49285fc3fe04075.png,https://xqimg.imedao.com/172bab8952b2845f3fa33381.png,https://xqimg.imedao.com/172bab898c8284483fa6d44c.png,https://xqimg.imedao.com/172bab89f292816f3fb20095.png,https://xqimg.imedao.com/172bab8a2ca284c93fe1379d.png,https://xqimg.imedao.com/172bab8a5a5286923fdc3edb.png,https://xqimg.imedao.com/172bab8a83d284603fe3f1e4.png,https://xqimg.imedao.com/172bab8ab68286933fd7ad87.png,https://xqimg.imedao.com/172bab8afed283e43fdf8725.png,https://xqimg.imedao.com/172bab8b2e42844e3fe37581.png,https://xqimg.imedao.com/172bab8b76e2844a3fc4fa12.png,https://xqimg.imedao.com/172bab8bb30286013fbf92d7.png,https://xqimg.imedao.com/172bab8bf222844c3fdb0867.png,https://xqimg.imedao.com/172bab8c2c3286993fe8e064.png,https://xqimg.imedao.com/172bab8c5d2284503fce5275.png,https://xqimg.imedao.com/172bab8c8a6284623f8e44e7.png,https://xqimg.imedao.com/172bab8cdc8281713fe6028d.png,https://xqimg.imedao.com/172bab8d16f284513fd1196d.png,https://xqimg.imedao.com/172bab8d6a2284513fad3cbf.png,https://xqimg.imedao.com/172bab8d83d284523fe93384.png,https://xqimg.imedao.com/172bab8de02283e73fc851c4.png,https://xqimg.imedao.com/172bab8e05f283e83fe717c8.png,https://xqimg.imedao.com/172bab8e4a8284643fc5ad7f.png,https://xqimg.imedao.com/172bab8e91c2869b3fe7c6fe.png,https://xqimg.imedao.com/172bab8eef1284543fd74e57.png,https://xqimg.imedao.com/172bab8f2cc285f33fea45a1.png,https://xqimg.imedao.com/172bab8f5e0283ed3fd643d7.png,https://xqimg.imedao.com/172bab8f9fe281763fefe77e.png,https://xqimg.imedao.com/172bab8fef5284cf3fec3be7.png,https://xqimg.imedao.com/172bab90286286083fe0e705.png,https://xqimg.imedao.com/172bab906dc284553fead6fc.png,https://xqimg.imedao.com/172bab90bcc2847f3fcc31c2.png,https://xqimg.imedao.com/172bab90fb5286a03fe607e5.png,https://xqimg.imedao.com/172bab913c62846b3fbd45a6.png,https://xqimg.imedao.com/172bab917dc284d03fe219b7.png,https://xqimg.imedao.com/172bab91bca286a23fe9b2d6.png,https://xqimg.imedao.com/172bab91f54284803fed3120.png,https://xqimg.imedao.com/172bab922a9286a33fedc93c.png","legal_user_visible":false,"is_column":false,"forbidden_retweet":false,"is_answer":false,"show_cover_pic":true,"recommend_cards":null,"cover_pic":"","is_refused":false,"is_ss_multi_pic":false,"is_bonus":false};
+window.SNOWMAN_TARGET = window.SNOWMAN_STATUS.user;
+
+</script>
+<script src="//assets.imedao.com/ugc/js/vue-common-6040863c71.js"></script>
+<script src="//assets.imedao.com/ugc/js/vue-article-54de0075ad.js"></script>
+</body>
+</html>
