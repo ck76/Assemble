@@ -8,14 +8,11 @@
 # http://www.j9p.com/class/190_8.html【教育相关】
 #
 import os
-import urllib
 from urllib import request
 from urllib.error import HTTPError
-
-import requests
-from lxml import etree
 from urllib.parse import parse_qs, urlparse
 
+from lxml import etree
 
 disk_url = "/Users/chengkun/workspace/j9p.com/"
 

@@ -27,7 +27,7 @@ print(span_s)
 print(p_s)
 
 for item in p_s:
-    text=item.replace("    ", "").replace("                ", "").replace("            ", "")
+    text = item.replace("    ", "").replace("                ", "").replace("            ", "")
     print(text)
 # all_ele = parse_html.xpath("//div[@class='grammar-content']//*")
 # print(len(all_ele))
