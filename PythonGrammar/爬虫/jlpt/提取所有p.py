@@ -112,10 +112,23 @@ n1_n5 = ["N1", "N2", "N3", "N4", "N5"]
 n1_n5_grammer = {"N1": [], "N2": [], "N3": [], "N4": [], "N5": []}  # TODO 根源处在这
 all_leibie = {}
 
+id_and_name = {}
+json_list = os.listdir("./json/")
+with open("jlpt语法按类别.md", 'w') as code:
+    for json_item in json_list:
+        n1_json = open("./json/" + json_item).read()
+        n1 = json.loads(n1_json)
+        data = n1.get("data")
+        for data_item in data:
+            grammerList = data_item.get("grammerList")
+            for grammer_item in grammerList:
+                id = grammer_item.get("id")
+                grammer = grammer_item.get("grammar")
+                id_and_name[id] = grammer
 
+print(id_and_name)
 def an_leibie():
     count = 0  # 137----73
-    count_count = 0
     json_list = os.listdir("./json/")
     with open("jlpt语法按类别.md", 'w') as code:
         for json_item in json_list:
@@ -134,24 +147,10 @@ def an_leibie():
                     haha["N4"] = []
                     haha["N5"] = []
 
-                    count = count + 1
-            # TODO 这里好奇怪啊
-            # print(id(all_leibie["伴随・非伴随"]["N1"]))
-            # print(id(all_leibie["比较・程度"]["N1"]))
-            # all_leibie["伴随・非伴随"]["N1"].append("ck")
-            # bansui=all_leibie["伴随・非伴随"]
-            # print(bansui)
-            # N1=bansui["N1"]
-            # print(id(N1))
-            # print(N1)
-            # N1.append("ck")
-            # N1.append("c1")
-            # print(N1)
-            # print(id(N1))
-            # bansui["N1"]=N1
-            # print(all_leibie)
-            # print(all_leibie["比较・程度"])
-            # break
+        for json_item in json_list:
+            n1_json = open("./json/" + json_item).read()
+            n1 = json.loads(n1_json)
+            data = n1.get("data")
             for data_item in data:
                 grammerList = data_item.get("grammerList")
                 for grammer_item in grammerList:
@@ -160,17 +159,19 @@ def an_leibie():
                     category = grammer_item["category"]
                     # TODO 为什么dict会复用？？？？？？？
                     grammer_dict = all_leibie[category]
-                    print(grammer_dict)
                     grammer_list = grammer_dict[level]
                     grammer_list.append(id)
 
-        print(json.dumps(all_leibie, ensure_ascii=False, indent=4))
         code.write("[TOC]\n")
         for title in all_leibie.keys():
-            code.write("## "+title + "\n")
-            for level in all_leibie[title]:
-                code.write("### "+level + "\n")
+            code.write("### " + title + "\n")
+            for level in all_leibie[title]:  # 比较・程度
+                if len(all_leibie[title][level]) == 0:
+                    continue
+                code.write("#### " + level + "\n")  # N1
                 for grammer_id in all_leibie[title][level]:
+                    grammer_name=id_and_name[grammer_id]
+                    code.write("##### " + grammer_name + "\n")
                     code.write("```c\n")
                     grammar_s = all_p[grammer_id]
                     for mulu_line in mulu:
