@@ -13,56 +13,183 @@ import urllib
 from lxml import etree
 import os
 
-path = "/Users/chengkun/workspace/iBook/语言学/日语/芥末语法1-792/"
-mulu = ["语法内容", "解说", "接続", "例文", "注意点", "相关文法"]
+from lxml.etree import Element
 
-all_p = {794: {"语法内容": ["hhhhh"], "解说": ["hhhhh"]}}
+path = "/Users/chengkun/workspace/iBook/语言学/日语/芥末语法1-792++/"
+mulu = ["语法内容", "解说", "接続", "例文", "注意点"]
 
-print(all_p)
+all_p = dict()
+all_p.keys()
 result = []
 for item in all_p:
     tag = ""
     if item in mulu:
-        print()
         tag = item
 for i in range(1, 795):
-    all_p[i] = {}
+    all_p[i] = dict()
 
 for i in range(1, 795):
-    # kari_title = all_p[i]
-
-    kari = {}
+    kari = dict()
     kari_texts = []
     current_title = ""
     current_p_text = []
     html_path = path + str(i) + ".html"
     # parse_html = etree.HTML(r.text)
     parse_html = etree.parse(html_path, etree.HTMLParser())
-    element_s = parse_html.xpath("//div[@class='grammar-content']/*")
+    element_s = parse_html.xpath("//div[@class='grammar-content']//*")
     # 进行一次循环，完成一个html页面的提取
+
     for element in element_s:
-        if element.attrib == "span":
+        if element.tag == "span":
             # 清空操作
             current_title = element.text
-            current_p_text=[]
-            if kari.__contains__(current_title):
+            current_p_text = []
+            if current_title in kari.keys():
                 pass
             else:
                 kari[current_title] = []
 
-        if element.attrib == "p":
-            current_p_text.append(element.text)
+        if element.tag == "p":
+            kari[current_title].append(element.text
+                                       .replace("\n                ", "")
+                                       .replace("            ", "")
+                                       .replace("    ", "")
+                                       # .replace("／", "\n//")
+                                       .replace("②", "\n②")
+                                       .replace("③", "\n③")
+                                       .replace("④", "\n④"))
+    all_p[str(i)] = kari
 
-    # print(span_s)
 
-    break
-    # p_s = parse_html.xpath("//p/text()")
-    all_p[i] = kari
+# print(json.dumps(all_p, ensure_ascii=False, indent=4))
+# print(all_p)
 
-print(all_p)
 
-# res = dom_tree.xpath('//li')[5]
-# res1 = html.tostring(res)
-# res2 = HTMLParser().unescape(res1.decode('utf-8'))
-# print(res.attrib)
-# print(res.text)
+def an_N1_N5():
+    json_list = os.listdir("./json/")
+    with open("jlpt语法按等级.md", 'w') as code:
+        count = 0
+        for json_item in json_list:
+            # if count == 1:
+            #     break
+            code.write("[TOC]")
+            code.write("\n")
+            n1_json = open("./json/" + json_item).read()
+            n1 = json.loads(n1_json)
+            data = n1.get("data")
+            # print(data[0].get("level"))
+            level = data[0].get("level")
+            code.write("### " + level)
+            code.write("\n")
+            count = count + 1
+            for item in data:
+                # print(item.get("id"))
+                title = item.get("title")
+                code.write("#### " + title)
+                code.write("\n")
+                grammerList = item.get("grammerList")
+                for grammer_item in grammerList:
+                    grammar = grammer_item.get("grammar")
+                    code.write("##### " + grammar + "\n")
+                    code.write("```c\n")
+                    grammer_id = grammer_item.get("id")
+                    grammar_s = all_p[grammer_id]
+                    for mulu_line in mulu:
+                        if mulu_line in grammar_s.keys():
+                            code.write("【" + mulu_line + "】" + "\n")
+                            content_s = grammar_s[mulu_line]
+                            for haha in content_s:
+                                if mulu_line == "例文":
+                                    code.write(haha.replace("／", "\n//") + "\n")
+                                else:
+                                    code.write(haha + "\n")
+
+                    code.write("```\n")
+                    code.write("\n")
+
+
+n1_n5 = ["N1", "N2", "N3", "N4", "N5"]
+n1_n5_grammer = {"N1": [], "N2": [], "N3": [], "N4": [], "N5": []}  # TODO 根源处在这
+all_leibie = {}
+
+
+def an_leibie():
+    count = 0  # 137----73
+    count_count = 0
+    json_list = os.listdir("./json/")
+    with open("jlpt语法按类别.md", 'w') as code:
+        for json_item in json_list:
+            n1_json = open("./json/" + json_item).read()
+            n1 = json.loads(n1_json)
+            data = n1.get("data")
+            for data_item in data:
+                grammerList = data_item.get("grammerList")
+                for grammer_item in grammerList:
+                    category = grammer_item["category"]
+                    all_leibie[str(category)] = {}
+                    haha = all_leibie[str(category)]
+                    haha["N1"] = []
+                    haha["N2"] = []
+                    haha["N3"] = []
+                    haha["N4"] = []
+                    haha["N5"] = []
+
+                    count = count + 1
+            # TODO 这里好奇怪啊
+            # print(id(all_leibie["伴随・非伴随"]["N1"]))
+            # print(id(all_leibie["比较・程度"]["N1"]))
+            # all_leibie["伴随・非伴随"]["N1"].append("ck")
+            # bansui=all_leibie["伴随・非伴随"]
+            # print(bansui)
+            # N1=bansui["N1"]
+            # print(id(N1))
+            # print(N1)
+            # N1.append("ck")
+            # N1.append("c1")
+            # print(N1)
+            # print(id(N1))
+            # bansui["N1"]=N1
+            # print(all_leibie)
+            # print(all_leibie["比较・程度"])
+            # break
+            for data_item in data:
+                grammerList = data_item.get("grammerList")
+                for grammer_item in grammerList:
+                    id = grammer_item.get("id")
+                    level = grammer_item.get("level")
+                    category = grammer_item["category"]
+                    # TODO 为什么dict会复用？？？？？？？
+                    grammer_dict = all_leibie[category]
+                    print(grammer_dict)
+                    grammer_list = grammer_dict[level]
+                    grammer_list.append(id)
+
+        print(json.dumps(all_leibie, ensure_ascii=False, indent=4))
+        code.write("[TOC]\n")
+        for title in all_leibie.keys():
+            code.write("## "+title + "\n")
+            for level in all_leibie[title]:
+                code.write("### "+level + "\n")
+                for grammer_id in all_leibie[title][level]:
+                    code.write("```c\n")
+                    grammar_s = all_p[grammer_id]
+                    for mulu_line in mulu:
+                        if mulu_line in grammar_s.keys():
+                            code.write("【" + mulu_line + "】" + "\n")
+                            content_s = grammar_s[mulu_line]
+                            for haha in content_s:
+                                if mulu_line == "例文":
+                                    code.write(haha.replace("／", "\n//") + "\n")
+                                else:
+                                    code.write(haha + "\n")
+
+                    code.write("```\n")
+                    code.write("\n")
+
+
+# an_N1_N5()
+
+an_leibie()
+# print(json.dumps(all_leibie, ensure_ascii=False, indent=4))
+# print(all_leibie)
+# print(all_leibie.keys().__len__())
