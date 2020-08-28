@@ -3,7 +3,6 @@ from urllib.error import HTTPError
 
 import requests
 import urllib
-from lxml import etree
 import os
 import json
 
@@ -21,6 +20,7 @@ cursor_s = []
 origin_video_download_urls = []
 origin_video_id_s = []
 
+yixiazai=open(path+"已下载.txt").readlines()
 
 def get_download_urls(http_url):
     r = requests.get(http_url, headers=headers)
@@ -35,7 +35,7 @@ def get_download_urls(http_url):
         origin_video_download_urls.append(origin_video_download)
         origin_video_id_s.append(origin_video_id)
         try:
-            if files.__contains__(str(origin_video_id) + ".mp4"):
+            if yixiazai.__contains__(str(origin_video_id) + ".mp4"):
                 print("已存在：" + origin_video_id)
                 continue
             f = urllib.request.urlopen(origin_video_download)
@@ -58,4 +58,3 @@ get_download_urls(init_url)
 with open("id+url.txt", "w") as file:
     for i in range(0, len(origin_video_id_s)):
         file.writelines(origin_video_id_s[i] + "--" + origin_video_download_urls[i] + "\n")
-
