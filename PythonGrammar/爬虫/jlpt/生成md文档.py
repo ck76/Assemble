@@ -12,8 +12,9 @@ import requests
 import urllib
 from lxml import etree
 import os
-
-html_path = "/Users/chengkun/workspace/iBook/语言学/日语/芥末语法1-792/"
+# TODO 有问题
+# html_path = "/Users/chengkun/workspace/iBook/语言学/日语/芥末语法1-792/"
+html_path="/Users/chengkun/Downloads/托福/语言学/日语/芥末语法1-792/"
 json_list = os.listdir("./json/")
 
 
@@ -112,7 +113,6 @@ def all():
 def ck(files):
     print(files)
     for item in files:
-        print()
         file_name = item.split(".")[0]
         with open(file_name + ".md", "w") as code:
             print()
@@ -241,9 +241,10 @@ def all_label():
 
 
 
-# ck(json_list)
-all_label()
+ck(json_list)
+# all_label()
 
+# all()
 """
 ### N1
 

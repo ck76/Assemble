@@ -12,10 +12,10 @@ import requests
 import urllib
 from lxml import etree
 import os
-
+# TODO 正解
 from lxml.etree import Element
 
-path = "/Users/chengkun/workspace/iBook/语言学/日语/芥末语法1-792++/"
+path = "/Users/chengkun/Downloads/托福/语言学/日语/芥末语法1-792++/"
 mulu = ["语法内容", "解说", "接続", "例文", "注意点"]
 
 all_p = dict()
@@ -95,7 +95,7 @@ def an_N1_N5():
                     grammer_id = grammer_item.get("id")
                     grammar_s = all_p[grammer_id]
                     for mulu_line in mulu:
-                        if mulu_line in grammar_s.keys():
+                        if mulu_line in grammar_s.keys() and mulu_line!="语法内容":
                             code.write("【" + mulu_line + "】" + "\n")
                             content_s = grammar_s[mulu_line]
                             for haha in content_s:
@@ -175,7 +175,7 @@ def an_leibie():
                     code.write("```c\n")
                     grammar_s = all_p[grammer_id]
                     for mulu_line in mulu:
-                        if mulu_line in grammar_s.keys():
+                        if mulu_line in grammar_s.keys() and mulu_line != "语法内容":
                             code.write("【" + mulu_line + "】" + "\n")
                             content_s = grammar_s[mulu_line]
                             for haha in content_s:
@@ -188,7 +188,7 @@ def an_leibie():
                     code.write("\n")
 
 
-# an_N1_N5()
+an_N1_N5()
 
 an_leibie()
 # print(json.dumps(all_leibie, ensure_ascii=False, indent=4))
