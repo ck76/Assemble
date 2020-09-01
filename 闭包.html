@@ -6,5 +6,45 @@
 </head>
 <body>
 
+<script>
+    /**
+     * 那么，this的值是什么呢？
+
+     函数的不同使用场合，this有不同的值。总的来说，this就是函数运行时所在的环境对象。下面分四种情况，详细讨论this的用法。
+     */
+    var name = "The Window";//对
+
+    var object = {
+        name: "My Object",
+
+        getNameFunc: function () {
+            return function () {
+                return this.name;
+            };
+
+        }
+
+    };
+
+    alert(object.getNameFunc()());
+
+    var name = "The Window";
+
+    var object = {
+        name: "My Object",//对
+
+        getNameFunc: function () {
+            var that = this;
+            return function () {
+                return that.name;
+            };
+
+        }
+
+    };
+
+    alert(object.getNameFunc()());
+</script>
+
 </body>
 </html>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c01d23d1-f631-4dd5-bd0f-99222872587d" name="Default Changelist" comment="">
+    <list default="true" id="16c3a35e-75f7-4fb5-96d8-a31b57163339" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/../React/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bootstrap/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../bootstrap/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../this用法.html" beforeDir="false" afterPath="$PROJECT_DIR$/../this用法.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../闭包.html" beforeDir="false" afterPath="$PROJECT_DIR$/../闭包.html" afterDir="false" />
     </list>
@@ -33,28 +33,8 @@
         <subPane>
           <expand>
             <path>
-              <item name="bootstrap" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bootstrap" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bootstrap" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bootstrap" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
-              <item name="fonts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bootstrap" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="react_native" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-native" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -69,6 +49,7 @@
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
+    <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -85,22 +66,44 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="React Native.Android">
+    <configuration name="Android" type="ReactNative" factoryName="React Native">
+      <working-dir value="$PROJECT_DIR$" />
+      <node-interpreter value="project" />
+      <platform value="ANDROID" />
+      <envs />
+      <only-packager />
+      <method v="2">
+        <option name="ReactNativePackager" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="iOS" type="ReactNative" factoryName="React Native">
+      <working-dir value="$PROJECT_DIR$" />
+      <node-interpreter value="project" />
+      <platform value="IOS" />
+      <envs />
+      <only-packager />
+      <method v="2">
+        <option name="ReactNativePackager" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c01d23d1-f631-4dd5-bd0f-99222872587d" name="Default Changelist" comment="" />
-      <created>1597202661464</created>
+      <changelist id="16c3a35e-75f7-4fb5-96d8-a31b57163339" name="Default Changelist" comment="" />
+      <created>1597213894922</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1597202661464</updated>
-      <workItem from="1597202738296" duration="773000" />
+      <updated>1597213894922</updated>
+      <workItem from="1597213897622" duration="18000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="773000" />
+    <option name="totallyTimeSpent" value="18000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="982" extended-state="6" />
@@ -110,6 +113,7 @@
       <window_info id="Capture Tool" />
       <window_info id="UI Designer" />
       <window_info id="Favorites" side_tool="true" />
+      <window_info id="npm" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24969475" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" />
@@ -119,7 +123,7 @@
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3298731" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
