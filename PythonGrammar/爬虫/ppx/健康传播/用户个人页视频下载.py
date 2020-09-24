@@ -1,6 +1,8 @@
 import json
 import urllib
 from urllib.error import HTTPError
+import certifi
+import cryptography
 
 import requests
 
@@ -43,7 +45,6 @@ path_yixiazai_6 = ""
 # 已下载的目录文件
 path_yixiazai_s = [path_yixiazai_0, path_yixiazai_1, path_yixiazai_2, path_yixiazai_3, path_yixiazai_4, path_yixiazai_5,
                    path_yixiazai_6, ]
-cookie = '''odin_tt=086849e00d3f955d5541126c9a7dec7ec2db27557fdff128f543fda2466a825f2b1ee2b9585686725c960c1e409df588c405e4b8b8be5754b445f00e4af92c8d;d_ticket=5f8fc87635be7acc88e9a5708a3f046607d02;sid_guard=158c6ffe4aa1c03f4d8eef9c7487c6a0%7C1599353104%7C5184000%7CThu%2C+05-Nov-2020+00%3A45%3A04+GMT;uid_tt=0b8e14f094b02cee966fad4d20de14af;uid_tt_ss=0b8e14f094b02cee966fad4d20de14af;sid_tt=158c6ffe4aa1c03f4d8eef9c7487c6a0;sessionid=158c6ffe4aa1c03f4d8eef9c7487c6a0;sessionid_ss=158c6ffe4aa1c03f4d8eef9c7487c6a0;install_id=2374555398325096;ttreq=1$5e844322393483f3a1d4e2d0944a149cc9273d6f'''
 cookie_dict = {
     "odin_tt": "086849e00d3f955d5541126c9a7dec7ec2db27557fdff128f543fda2466a825f2b1ee2b9585686725c960c1e409df588c405e4b8b8be5754b445f00e4af92c8d",
     "d_ticket": "5f8fc87635be7acc88e9a5708a3f046607d02",
@@ -66,11 +67,13 @@ cookie_dict = {
 # }
 headers = {
     "Host": "iu.snssdk.com",
+    # "Cookie": "odin_tt=086849e00d3f955d5541126c9a7dec7ec2db27557fdff128f543fda2466a825f2b1ee2b9585686725c960c1e409df588c405e4b8b8be5754b445f00e4af92c8d; d_ticket=5f8fc87635be7acc88e9a5708a3f046607d02; sid_guard=158c6ffe4aa1c03f4d8eef9c7487c6a0%7C1599353104%7C5184000%7CThu%2C+05-Nov-2020+00%3A45%3A04+GMT; uid_tt=0b8e14f094b02cee966fad4d20de14af; uid_tt_ss=0b8e14f094b02cee966fad4d20de14af; sid_tt=158c6ffe4aa1c03f4d8eef9c7487c6a0; sessionid=158c6ffe4aa1c03f4d8eef9c7487c6a0; sessionid_ss=158c6ffe4aa1c03f4d8eef9c7487c6a0; install_id=2374555398325096; ttreq=1$5e844322393483f3a1d4e2d0944a149cc9273d6f",
     "Cookie": "odin_tt=086849e00d3f955d5541126c9a7dec7ec2db27557fdff128f543fda2466a825f2b1ee2b9585686725c960c1e409df588c405e4b8b8be5754b445f00e4af92c8d; d_ticket=5f8fc87635be7acc88e9a5708a3f046607d02; sid_guard=158c6ffe4aa1c03f4d8eef9c7487c6a0%7C1599353104%7C5184000%7CThu%2C+05-Nov-2020+00%3A45%3A04+GMT; uid_tt=0b8e14f094b02cee966fad4d20de14af; uid_tt_ss=0b8e14f094b02cee966fad4d20de14af; sid_tt=158c6ffe4aa1c03f4d8eef9c7487c6a0; sessionid=158c6ffe4aa1c03f4d8eef9c7487c6a0; sessionid_ss=158c6ffe4aa1c03f4d8eef9c7487c6a0; install_id=2374555398325096; ttreq=1$5e844322393483f3a1d4e2d0944a149cc9273d6f",
     "x-tt-token": "00158c6ffe4aa1c03f4d8eef9c7487c6a0d2b52ee1884e982c32b18e9d5172737e44ec74a178c431f10f741b97e487655836",
     "x-ss-cookie": "install_id=2374555398325096; ttreq=1$5e844322393483f3a1d4e2d0944a149cc9273d6f; d_ticket=5f8fc87635be7acc88e9a5708a3f046607d02; odin_tt=086849e00d3f955d5541126c9a7dec7ec2db27557fdff128f543fda2466a825f2b1ee2b9585686725c960c1e409df588c405e4b8b8be5754b445f00e4af92c8d; sessionid=158c6ffe4aa1c03f4d8eef9c7487c6a0; sessionid_ss=158c6ffe4aa1c03f4d8eef9c7487c6a0; sid_guard=158c6ffe4aa1c03f4d8eef9c7487c6a0%7C1599353104%7C5184000%7CThu%2C+05-Nov-2020+00%3A45%3A04+GMT; sid_tt=158c6ffe4aa1c03f4d8eef9c7487c6a0; uid_tt=0b8e14f094b02cee966fad4d20de14af; uid_tt_ss=0b8e14f094b02cee966fad4d20de14af",
     "tt-request-time": "1600768307278",
-    "user-agent": "Super 3.0.6 rv:3.0.6.80 (iPhone; iOS 13.5.1; zh_CN) Cronet",
+    # "user-agent": "Super 3.0.6 rv:3.0.6.80 (iPhone; iOS 13.5.1; zh_CN) Cronet",
+    "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1",
     "sdk-version": "2",
     "passport-sdk-version": "5.12.0",
     "x-ss-dp": "1319",
@@ -83,8 +86,17 @@ headers = {
 def get_download_urls(path_save, init_url, yixiazai, origin_video_download_urls, origin_video_id_s):
     print(path_save)
     print(init_url)
-    r = requests.get(init_url, headers=headers)
-    print(r.status_code)
+    requests.packages.urllib3.disable_warnings()
+    r = requests.get(init_url, headers=headers, verify=False, timeout=10)
+    # print(type(r.headers))
+    # for item in r.headers:
+    #     print(item)
+    # print(r.status_code)
+    # print(r.cookies)
+    # print(r.ok)
+    # print(r.raw)
+    print(r.text)
+    print(r.content)
     r_json = json.loads(r.text)
     data_s = r_json.get("data").get("data")
     for cell in data_s:
@@ -122,10 +134,14 @@ def start():
     try:
         print()
         for index in range(0, len(path_save_s)):
-            if index == 0 :
+            if index == 0:
                 continue
-            if index == 1 :
-                continue
+            # if index == 1:
+            #     continue
+            # if index == 2:
+            #     continue
+            # if index == 3:
+            #     continue
             path_save = path_save_s[index]
             if path_save == "":
                 continue
