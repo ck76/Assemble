@@ -7,7 +7,6 @@ import cryptography
 
 import requests
 
-# TODO 换cookie和url，存储路径，已下载目录txt路径，即可
 # (origin)video_download
 # 0插眼
 # 1健康传播
@@ -17,7 +16,7 @@ import requests
 # 健康观察(分身)
 # 健康观察
 # 熟人志
-switch_s = [False, False, True, True, True, True, True, True, False, False, False, ]
+switch_s = [False, False, True, False, False, False, False, False, False, False, False, ]
 
 path_save_0 = "/Volumes/TOSHIBA/ppx/【0】插眼/"
 path_save_1 = "/Volumes/TOSHIBA/ppx/【1】健康传播/"
@@ -36,7 +35,7 @@ path_save_s = [path_save_0, path_save_1, path_save_2, path_save_3, path_save_4, 
 
 init_url_0 = "https://is.snssdk.com/bds/ward/list/?iid=2374555398325096&resolution=1242*2208&os_version=13.5.1&app_name=super&channel=App%20Store&idfa=1ABF0A44-4CBE-4191-B8E6-154836171658&device_platform=iphone&mac_address=02:00:00:00:00:00&vid=86A0335D-BB60-42CC-A461-72D1D67C6DE1&openudid=01942689b4d6f20e58ba3abb334a86fcf32d187c&device_type=iPhone%207%20Plus&idfv=86A0335D-BB60-42CC-A461-72D1D67C6DE1&version_code=3.0.6&ac=WIFI&device_id=2673605010266535&aid=1319&update_version_code=30680&user_id=179942927110947&count=20"
 init_url_1 = "https://is.snssdk.com/bds/user/publish_list/?iid=2937491619330999&resolution=1242*2208&os_version=13.5.1&app_name=super&channel=App%20Store&idfa=6E007FDB-BEAC-493A-B75D-B45F76AEA6BD&device_platform=iphone&mac_address=02:00:00:00:00:00&vid=6248603F-E50C-444D-B928-543FB93C1F8C&openudid=01942689b4d6f20e58ba3abb334a86fcf32d187c&device_type=iPhone%207%20Plus&idfv=6248603F-E50C-444D-B928-543FB93C1F8C&version_code=2.9.8&ac=WIFI&device_id=2673605010266535&aid=1319&update_version_code=29880&count=20&user_id=1591688795264663&api_version=1&direction=1"
-init_url_2 = "http://api.ribaoapi.com/bds/user/userfeed/?iid=3993043734112957&resolution=1242*2208&app_name=super&channel=App%20Store&device_platform=iphone&idfa=1ABF0A44-4CBE-4191-B8E6-154836171658&vid=16669D53-CE1F-4081-991A-1EDCD1888DE8&openudid=be5d560c284b36c0aedb650d91fcc14095e13e7e&device_type=iPhone%207%20Plus&idfv=16669D53-CE1F-4081-991A-1EDCD1888DE8&device_id=2673605010266535&ac=WIFI&version_code=1.1.0&os_version=13.5.1&aid=1319&user_id=4358067917166531&direction=1&list_type=0&mas=002e3d949f3f813c9b9e551fb260c8cd121f855f95fff809266302&as=a285f176f5985f7c0f8410&ts=1601117317"
+init_url_2 = "https://api.ribaoapi.com/bds/user/userfeed/?iid=3993043734112957&resolution=1242*2208&app_name=super&channel=App%20Store&device_platform=iphone&idfa=1ABF0A44-4CBE-4191-B8E6-154836171658&vid=16669D53-CE1F-4081-991A-1EDCD1888DE8&openudid=be5d560c284b36c0aedb650d91fcc14095e13e7e&device_type=iPhone%207%20Plus&idfv=16669D53-CE1F-4081-991A-1EDCD1888DE8&device_id=2673605010266535&ac=WIFI&version_code=1.1.0&os_version=13.5.1&aid=1319&user_id=4358067917166531&direction=1&list_type=0&mas=00386a858b4f04fc7e683d22cb007b98b7189ede29962103157477&as=a22533366a40efa1bf5764&ts=1601122570"
 init_url_3 = "http://api.ribaoapi.com/bds/user/userfeed/?iid=3993043734112957&resolution=1242*2208&app_name=super&channel=App%20Store&device_platform=iphone&idfa=1ABF0A44-4CBE-4191-B8E6-154836171658&vid=16669D53-CE1F-4081-991A-1EDCD1888DE8&openudid=be5d560c284b36c0aedb650d91fcc14095e13e7e&device_type=iPhone%207%20Plus&idfv=16669D53-CE1F-4081-991A-1EDCD1888DE8&device_id=2673605010266535&ac=WIFI&version_code=1.1.0&os_version=13.5.1&aid=1319&user_id=6058032285&direction=1&list_type=0&mas=008733d3f9ab46e918d7ad84c132f4cc997689393bda592cfc3122&as=a2b521c605655fdcbf5635&ts=1601117269"
 init_url_4 = "http://api.ribaoapi.com/bds/user/userfeed/?iid=3993043734112957&resolution=1242*2208&app_name=super&channel=App%20Store&device_platform=iphone&idfa=1ABF0A44-4CBE-4191-B8E6-154836171658&vid=16669D53-CE1F-4081-991A-1EDCD1888DE8&openudid=be5d560c284b36c0aedb650d91fcc14095e13e7e&device_type=iPhone%207%20Plus&idfv=16669D53-CE1F-4081-991A-1EDCD1888DE8&device_id=2673605010266535&ac=WIFI&version_code=1.1.0&os_version=13.5.1&aid=1319&user_id=1591688795264663&direction=1&list_type=0&mas=003f0dcfc2e9233eb1b41e46116b59ce0c373cb1d6afae1d90ef1a&as=a25581a644a36fecaf9788&ts=1601117236"
 init_url_5 = "http://api.ribaoapi.com/bds/user/userfeed/?iid=3993043734112957&resolution=1242*2208&app_name=super&channel=App%20Store&device_platform=iphone&idfa=1ABF0A44-4CBE-4191-B8E6-154836171658&vid=16669D53-CE1F-4081-991A-1EDCD1888DE8&openudid=be5d560c284b36c0aedb650d91fcc14095e13e7e&device_type=iPhone%207%20Plus&idfv=16669D53-CE1F-4081-991A-1EDCD1888DE8&device_id=2673605010266535&ac=WIFI&version_code=1.1.0&os_version=13.5.1&aid=1319&user_id=2334989129615431&direction=1&list_type=0&mas=00729a41dc9afb6c5121cae50ea4987d7dbccc98a403a9b8eb2717&as=a2f5f1d6d6dfbf1baf4001&ts=1601117174"
@@ -75,20 +74,35 @@ headers = {
 }
 
 
-def get_download_urls(path_save, init_url, yixiazai, origin_video_download_urls, origin_video_id_s):
+def get_download_urls(path_save, init_url, cursor_url, yixiazai, origin_video_download_urls, origin_video_id_s):
     print("path_save: " + path_save)
-    print("init_url: " + init_url)
     requests.packages.urllib3.disable_warnings()
     time.time()
     request_time = str(round(time.time() * 1000))
     headers["tt-request-time"] = request_time
-    r = requests.get(init_url, headers=headers)
+    r = requests.get(cursor_url, headers=headers)
     r.encoding = "utf-8"
     print(r.text)
     r_json = json.loads(r.text)
     data_s = r_json.get("data").get("data")
     for cell in data_s:
-        origin_video_download = cell.get("item").get("origin_video_download").get("url_list")[0].get("url")
+        temp1 = cell.get("item")
+        if temp1 == None:
+            continue
+        temp2 = temp1.get("origin_video_download")
+        if temp2 == None:
+            continue
+        temp3 = temp2.get("url_list")[0]
+        if temp3 == None:
+            continue
+        temp4 = temp3.get("url")
+        if temp4 == None:
+            continue
+        # origin_video_download = cell.get("item").get("origin_video_download").get("url_list")[0].get("url")
+        origin_video_download = temp4
+
+        if origin_video_download == "":
+            continue
         print(origin_video_download)
         origin_video_id = cell.get("item").get("origin_video_id")
         # 【带水印】
@@ -109,9 +123,10 @@ def get_download_urls(path_save, init_url, yixiazai, origin_video_download_urls,
     cursor = r_json["data"].get("cursor")
     if cursor.get("has_more") == True:
         cursor = cursor.get("loadmore_cursor")
-        init_url = init_url.replace("direction=1", "direction=2") + "&cursor=" + str(cursor)
-        print("loadmore " + init_url)
-        get_download_urls(path_save, init_url, yixiazai, origin_video_download_urls, origin_video_id_s)
+        cursor_url = init_url.replace("direction=1", "direction=2") + "&cursor=" + str(cursor)
+        print("cursor -----------  cursor=" + str(cursor))
+        print("cursor_url -----------  cursor_url=" + cursor_url)
+        get_download_urls(path_save, init_url, cursor_url, yixiazai, origin_video_download_urls, origin_video_id_s)
 
 
 def start():
@@ -120,7 +135,6 @@ def start():
     yixiazai = []
     path_yixiazai = ""
     try:
-        print()
         for index in range(0, len(switch_s)):
             # 清除上一个循环的影响
             origin_video_download_urls = []
@@ -129,7 +143,14 @@ def start():
             path_yixiazai = ""
 
             if not switch_s[index]:
+                print("当前任务不需要下载。")
                 continue
+
+            print("上一次ok！")
+            print(origin_video_id_s)
+            print(origin_video_download_urls)
+            time.sleep(1)
+
             path_save = path_save_s[index]
             if path_save == "":
                 continue
@@ -139,7 +160,7 @@ def start():
             for item in temp:
                 yixiazai.append(item.split("--")[0])
 
-            get_download_urls(path_save, init_url, yixiazai, origin_video_download_urls, origin_video_id_s)
+            get_download_urls(path_save, init_url, init_url, yixiazai, origin_video_download_urls, origin_video_id_s)
 
             # 保存
             with open(path_yixiazai, "w+") as file:
