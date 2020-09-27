@@ -16,7 +16,7 @@ import requests
 # 健康观察(分身)
 # 健康观察
 # 熟人志
-switch_s = [False, False, True, False, False, False, False, False, False, False, False, ]
+switch_s = [True, True, True, True, True, True, True, True, False, False, False, ]
 
 path_save_0 = "/Volumes/TOSHIBA/ppx/【0】插眼/"
 path_save_1 = "/Volumes/TOSHIBA/ppx/【1】健康传播/"
@@ -80,6 +80,7 @@ def get_download_urls(path_save, init_url, cursor_url, yixiazai, origin_video_do
     time.time()
     request_time = str(round(time.time() * 1000))
     headers["tt-request-time"] = request_time
+    # TODO 就是这出的bug……
     r = requests.get(cursor_url, headers=headers)
     r.encoding = "utf-8"
     print(r.text)
