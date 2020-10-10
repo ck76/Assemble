@@ -6,7 +6,7 @@ import natsort
 from moviepy.editor import *
 import os
 
-path = "/Users/chengkun/Downloads/ppx/健康传播1/"
+path = "/Volumes/TOSHIBA/ppx/2/untitled folder/"
 os.chdir(path)
 # 定义一个数组
 L = []

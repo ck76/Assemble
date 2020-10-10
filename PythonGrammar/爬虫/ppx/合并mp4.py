@@ -7,7 +7,7 @@ import sys
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 import os
 
-path = "/Users/chengkun/Downloads/ppx/健康传播1"
+path = "/Volumes/TOSHIBA/ppx/2/untitled folder"
 # qichche
 #   | merge1
 #       | video1.mp4    
