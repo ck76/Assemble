@@ -10,18 +10,19 @@ from urllib.parse import parse_qs
 # http://www.ximalaya.com/tracks/95414554.json    二级页 正经
 # A开头重新命名
 # https://www.ximalaya.com/gerenchengzhang/16059951/p1(30)-p8(10)
-pre_url = "https://www.ximalaya.com/waiyu/37958544/p"
+pre_url = "https://www.ximalaya.com/youshengshu/14289577/p"
 second_url = "http://www.ximalaya.com/tracks/"
 result_mp4_json = []
 result_mp4 = []
 result_mp4_name = []
-save_path = "/Users/chengkun/Downloads/"
-album_id = "40638137"
+save_path = "/Users/chengkun/Downloads/喜马拉雅/道德经-白话版/"
+categ = "renwenjp"
+album_id = "2993623"
 headers = {
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36'
 }
 for i in range(1, 9):
-    url = "https://www.ximalaya.com/waiyu/" + album_id + "/p" + str(i)
+    url = "https://www.ximalaya.com/" + categ + "/" + album_id + "/p" + str(i)
     r = requests.get(url, headers=headers)
     parse_html = etree.HTML(r.text)
     mp4s = parse_html.xpath("//div[@class='text _Vc']/a/@href")
